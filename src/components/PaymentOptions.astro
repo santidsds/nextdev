@@ -1,0 +1,41 @@
+---
+const { href, title, body } = Astro.props;
+import mplogo from "../assets/logo_and_text.svg?url"
+import mphero from "../assets/mp_payment_hero.svg?url"
+import bg_payment from "./assets/bg3.jpg?url"
+
+---
+
+<div id="payment" class='flex-row items-center justify-center w-full text-xl font-bold h-[150vh] bg-secondary_bg bg-cover snap-startww'>
+	<div class="absolute h-[150vh] opacity-50 w-full bg-[black]"></div>
+	<div class=" pt-20  flex justify-center ">
+		<img class="text-center z-20 w-48" src={mplogo} alt="logo"/>
+	</div>
+
+	<div class="flex justify-center gap-[7em] items-center pt-20 z-30">
+		<h1 class="text-4xl max-w-xl text-[#B2AAB8] z-20 overflow-hidden p-1">Todos tus pagos <span class="text-white">respaldados</span> por <span class="text-white">MercadoPago </span>
+		</h1>
+		<img class="z-20  " src={mphero} alt="">
+	</div>
+</div>
+
+<style is:global>
+
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,www
+			Courier New,
+			monospace;
+	}
+
+	span{
+		color: unset;
+		background-color: unset;
+	}
+</style>
+

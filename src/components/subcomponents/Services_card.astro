@@ -1,0 +1,14 @@
+---
+const { title, price, body, service } = Astro.props;
+
+---
+
+<div class="min-h-[306px] w-[402px]  bg-white bg-opacity-[4%] rounded-3xl border-white border-[1px] border-opacity-[4%] ">
+    <div class="flex-col items-center py-14 px-16 min-w-fit">
+        <h2 class=" text-white font-extrabold text-center tracking-[3px] shadow-md">{title}</h2>
+        <h4 class="text-[10px] text-custom-purple font-medium text-center tracking-wide mt-1">{price}</h4>
+
+        <p class=" font-['Inter'] text-light_gray text-[10px] mt-[3em] leading-loose">{body}</p>
+        <a class="p-[1em] block text-white text-center rounded-lg mt-8 bg-[#E9C1FF] bg-opacity-[27%] text-[10px] shadow-md" href=`/${service}`> Mas informacion</a>
+    </div>
+</div>

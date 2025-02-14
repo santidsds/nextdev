@@ -1,0 +1,123 @@
+---
+const { href, title, body } = Astro.props;
+import Comets from "./Comets.astro";
+import BigPlanet from "./BigPlanet.astro"
+
+---
+<div id="bg_1" class="py-4 h-[500vh] w-[full] bg-main_bg bg-cover bg-fixed">
+	<Comets/>
+
+	<section class='flex justify-center text-xl font-bold' >
+
+		<h1 id="mainTitle" class=" text-white lg:text-5xl lg:max-w-2xl text-4xl max-w-xl text-center py-4 mt-[35vh] transition ease-out opacity-80">¿Necesitas Transicionar al <span>Mundo Digital?</span></h1>
+        <BigPlanet/>
+		
+	</section>
+
+	<section class="mt-[35em] 2xl:mt-[50em] w-full  ">
+		<div  id="postPlanetSection" class="px-[5em] text-white transition ease-in delay-75 flex justify-center">
+			
+			<div id="hero_animation_1" class="opacity-0 transition ease-in flex justify-center items-center top-0 left-0 w-full h-screen gap-[15em] fixed">
+				<p  class="  font-bold text-xl max-w-sm text-gray-300 ">Nos caracteriza el uso de las <span class="!text-white">últimas tecnologías</span> y los últimos trends en diseño, para que tengas tu sitio web ma tus clientes.</p>
+				<img class="w-[700px]" src="/public/mockup.png" alt="">
+			</div>
+
+			<div id="hero_animation_2" class="opacity-0 transition ease-in flex justify-center items-center top-0 left-0 w-full h-screen gap-[15em] fixed">
+				<p  class="  font-bold text-xl max-w-sm text-gray-300 ">Otro texto blabla el uso de las <span class="!text-white">últimas tecnologías</span> y los últimos trends en diseño, para que tengas tu sitio web ma tus clientes.</p>
+				<img class="w-[700px]" src="/public/mockup.png" alt="">
+			</div>
+
+			<div id="hero_animation_3" class="opacity-0 transition ease-in flex justify-center items-center top-0 left-0 w-full h-screen gap-[15em] fixed">
+				<p  class="  font-bold text-xl max-w-sm text-gray-300 ">labla el uso de las <span class="!text-white">últimas tecnologías</span> y los últimos trends en diseño, para que tengas tu sitio web ma tus clientes.</p>
+				<img class="w-[700px]" src="/public/mockup.png" alt="">
+			</div>
+			
+			
+		</div>
+	</section>
+</div>
+
+
+<style>
+
+	
+
+	span {
+	background: linear-gradient(to right, #E9C1FF, #4b88d3); /* Standard syntax; “to right” is explicit direction */
+	background: -webkit-linear-gradient(left, #E9C1FF, #4278B9); /* For older WebKit browsers */
+	-webkit-background-clip: text;
+	background-clip: text; /* Standard syntax */
+	-webkit-text-fill-color: transparent;
+	color: transparent; /* Fallback for non-WebKit browsers */
+	
+	}
+ 
+
+	 
+
+
+</style>
+
+<script>
+	const elements = {
+    mainTitle: document.getElementById('mainTitle'),
+    hero_animation_1: document.getElementById('hero_animation_1'),
+    hero_animation_2: document.getElementById('hero_animation_2'),
+    hero_animation_3: document.getElementById('hero_animation_3'),
+    planets: document.querySelectorAll('.bigPlanet')
+};
+
+const opacityRanges = [
+    { element: 'hero_animation_1', ranges: [
+        { start: 918, end: 1020, opacity: 0 },
+        { start: 1020, end: 1122, opacity: 0.5 },
+        { start: 1122, end: 1600, opacity: 1 },
+        { start: 1600, end: 1800, opacity: 0.5 },
+        { start: 1800, end: Infinity, opacity: 0 }
+    ]},
+    { element: 'hero_animation_2', ranges: [
+        { start: 0, end: 1850, opacity: 0 },
+        { start: 1850, end: 2000, opacity: 0.5 },
+        { start: 2000, end: 2500, opacity: 1 },
+        { start: 2500, end: 2700, opacity: 0.5 },
+        { start: 2700, end: Infinity, opacity: 0 }
+    ]},
+    { element: 'hero_animation_3', ranges: [
+        { start: 0, end: 2700, opacity: 0 },
+        { start: 2700, end: 2850, opacity: 0.5 },
+        { start: 2850, end: 3350, opacity: 1 },
+        { start: 3350, end: 3550, opacity: 0.5 },
+        { start: 3550, end: Infinity, opacity: 0 }
+    ]}
+];
+
+function setOpacity(element, scrollPosition, ranges) {
+    for (const range of ranges) {
+        if (scrollPosition >= range.start && scrollPosition < range.end) {
+            element.style.opacity = range.opacity;
+            break;
+        }
+
+	
+    }
+}
+
+window.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY;
+    const translateYValue = `${-(scrollPosition * 0.5)}px`;
+
+    elements.planets.forEach(planet => {
+        planet.style.transform = `translateY(${translateYValue})`;
+    });
+
+    elements.mainTitle.style.opacity = scrollPosition > 100 ? '0' : '100';
+
+    opacityRanges.forEach(item => {
+        setOpacity(elements[item.element], scrollPosition, item.ranges);
+    });
+});
+
+</script>
+
+
+	

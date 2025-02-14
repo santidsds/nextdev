@@ -1,0 +1,138 @@
+---
+import Layout from "../layouts/Layout.astro";
+import backBtn from "../assets/btn_back.svg?url"
+import ham from "../assets/btn_ham.svg?url"
+import more_arrow from "../assets/more_arrow.svg?url"
+import mockup from "/public/mockup.png?url"
+import mockupPhone from "../assets/mockup_phone.png?url"
+
+---
+
+<Layout title="Creacion de sitio web" >
+
+	<div class="h-screen w-screen bg-secondary_bg bg-cover overflow-auto overflow-x-hidden" >
+        <div class="w-full flex justify-between px-[3em] py-[2em] fixed">
+            <button class=""><a href="/#services"><img src={backBtn} alt=""></a>
+            <button><img src={ham} alt=""></button>
+        </div>
+
+        <div class="h-screen">
+            <div class="text-white font-[800] tracking-widest text-xl w-screen flex-row justify-center items-center text-center p-[3em] ">
+                <h1 class="">CREACIÓN DE CONTENIDO PARA REDES SOCIALES</h1>
+                <div class="h-[4px] w-[40px] bg-white rounded-lg mx-auto mt-4 duration-75 ease-in hover:w-[40px]"></div>
+            </div>
+    
+            <div class=" w-full flex justify-center items-center mt-[10em] gap-[15em]">
+                <div>
+                    <h2 class="text-light_gray font-[700] text-3xl max-w-sm">
+						<span class="text-white">Posts, Stories, Ads, SEO</span>
+						Todo lo que necesitas en un solo lugar </h2>
+                </div>
+    
+                <div>
+					<img class="w-[600px]" src={mockup} alt="">
+				</div>
+            </div>
+            
+           
+        </div>
+        
+		<div class="h-[200vh] flex justify-center items-start w-screen">
+			
+            <div class=" flex flex-col items-center mt-[8em]">
+				<div class="text-light_gray flex font-[600] text-3xl text-center ">
+					<h1 class="max-w-4xl"><span class="text-white">Transforma</span> tu presencia y posicionate como una empresa de <span class="text-white">primer nivel</span></h1>
+				</div>
+                <div class="mt-[10em] flex">
+                    <div class="mt-[3em] flex-col justify-center">
+						<img class="w-[300px] hover:w-[350px] duration-300 transition-all ease-in-out cursor-pointer" src={mockupPhone} alt="">
+					</div>
+                    <div class="ml-[-3em]">
+						<img class="w-[300px] hover:w-[350px] duration-300 transition-all ease-in-out cursor-pointer" src={mockupPhone} alt="">
+					</div>
+                </div>
+				<div class="h-[3px] w-[35px] bg-white rounded-lg mx-auto mt-[3em] duration-75 ease-in "></div>
+
+                <div class="mt-[20em] flex">
+                    <div class="mt-[5em] flex-col justify-center">
+						<img class="w-[550px] hover:w-[700px] duration-300 transition-all ease-in-out cursor-pointer" src={mockup} alt="">
+						<p class="text-white text-center mt-[2em] text-xs font-[600]">Antes</p>
+						<div class="h-[3px] w-[15px] bg-white rounded-lg mx-auto mt-2 duration-75 ease-in "></div>
+					</div>
+                    <div class="ml-[-5em]">
+						<img class="w-[550px] hover:w-[700px] duration-300 transition-all ease-in-out cursor-pointer" src={mockup} alt="">
+						<p class="text-white text-center mt-[2em] text-xs font-[600]">Despues</p>
+						
+					</div>
+                </div>
+    
+            </div>
+        </div>
+        
+            <div class="h-[180vh] flex justify-around items-start pt-[10em]">
+                <div class="sticky top-[45%]">
+                    <h1 class=" text-light_gray font-[700] text-4xl max-w-lg">
+                        Elegi el plan que más se <span class="text-white">adapate</span> a tus <span class="text-white">necesidades</span></h1>
+                </div> 
+
+                <div class="">
+
+                    <div class="h-[50vh]">
+                        <div class="min-h-fit w-[402px]  bg-white bg-opacity-[4%] rounded-3xl border-white border-[1px] border-opacity-[4%] ">
+                            <div class="flex-col items-center py-14 px-16 min-w-fit">
+                                <h2 class=" text-white font-extrabold text-center tracking-[3px]">PLAN STARTUP</h2>
+                                <h4 class="text-[10px] text-custom-purple font-medium text-center tracking-wide mt-1">5900 UYU</h4>
+                        
+                                <p class=" font-['Inter'] text-light_gray text-[10px] mt-[3em] leading-loose">Destinado hacia quienes buscan su primer sitio web, directo sin mucha extensión.</p>
+                                <a class=" self p-[1em] block text-white text-center rounded-lg mt-8 bg-[#E9C1FF] bg-opacity-[27%] text-[10px]"> Mas informacion</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="h-[50vh]">
+                        <div class="min-h-fit w-[402px]  bg-white bg-opacity-[4%] rounded-3xl border-white border-[1px] border-opacity-[4%]">
+                            <div class="flex-col items-center py-14 px-16 min-w-fit">
+                                <h2 class=" text-white font-extrabold text-center tracking-[3px]">PLAN STARTUP</h2>
+                                <h4 class="text-[10px] text-custom-purple font-medium text-center tracking-wide mt-1">5900 UYU</h4>
+                        
+                                <p class=" font-['Inter'] text-light_gray text-[10px] mt-[3em] leading-loose">Destinado hacia quienes buscan su primer sitio web, directo sin mucha extensión.</p>
+                                <a class=" self p-[1em] block text-white text-center rounded-lg mt-8 bg-[#E9C1FF] bg-opacity-[27%] text-[10px]"> Mas informacion</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="h-[50vh]">
+                        <div class="min-h-fit w-[402px]  bg-white bg-opacity-[4%] rounded-3xl border-white border-[1px] border-opacity-[4%]">
+                            <div class="flex-col items-center py-14 px-16 min-w-fit">
+                                <h2 class=" text-white font-extrabold text-center tracking-[3px]">PLAN STARTUP</h2>
+                                <h4 class="text-[10px] text-custom-purple font-medium text-center tracking-wide mt-1">5900 UYU</h4>
+                        
+                                <p class=" font-['Inter'] text-light_gray text-[10px] mt-[3em] leading-loose">Destinado hacia quienes buscan su primer sitio web, directo sin mucha extensión.</p>
+                                <a class=" self p-[1em] block text-white text-center rounded-lg mt-8 bg-[#E9C1FF] bg-opacity-[27%] text-[10px]"> Mas informacion</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+            
+            
+
+        
+      
+        
+    
+
+
+	</div>
+
+	
+
+    
+
+ 
+	
+</Layout>
+
+

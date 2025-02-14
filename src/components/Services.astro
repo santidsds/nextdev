@@ -1,0 +1,46 @@
+---
+const { href, title, body } = Astro.props;
+import Comets from "./Comets.astro";
+import Card from "./subcomponents/Services_card.astro"
+---
+<div id="services" class="min-h-screen h-full w-screen p-[5em] bg-main_bg bg-cover bg-fixed">
+          
+     
+            <div class="flex-col items-center justify-center w-full">
+                <h1 class=" text-white font-bold lg:text-2xl text-xl text-center transition ease-out">Explora nuestros servicios</h1>
+                <div class="flex justify-center"><p class="text-light_gray text-center text-xs mt-1 max-w-sm">Los precios variarán dependiendo la extension y/o complejidad del sitio a desarrollar</p></div>
+            </div>
+
+            <div class="scale-75 flex flex-col justify-center items-center  gap-12 my-[-5em]
+                        xl:flex-row xl:my-[1em]
+                        2xl:mt-[4em]
+                        sm:scale-100 sm:my-[5em]
+                         ">
+                <div class="">
+                    <Card 
+                       title="CREACION DE SITIO WEB" 
+                       price="DESDE 3900 UYU" 
+                       body="Lorem ipsum um lorem ipsum ipsum lorem lorem api tipsum doherty valar morgulis lorem ipsum ipsum lorem lorem api tipsum doherty valar morgulis"
+                       service="service_1" > 
+                    </Card>
+                </div>
+
+                <div class="xl:mt-[6em]">
+                    <Card 
+                       title="RENOVACIÓN DE SITIO WEB EXISTENTE" 
+                       price="DESDE 2900 UYU" 
+                       body="Lorem ipsum um lorem ipsum ipsum lorem lorem api tipsum doherty valar morgulis lorem ipsum ipsum lorem lorem api tipsum doherty valar morgulis"
+                       service="service_2" > 
+                    </Card>
+                </div>
+
+                <div class="xl:mt-[12em]">
+                    <Card 
+                       title="CREACIÓN DE CONTENIDO PARA REDES SOCIALES" 
+                       price="DESDE 990 UYU" 
+                       body="Lorem ipsum um lorem ipsum ipsum lorem lorem api tipsum doherty valar morgulis lorem ipsum ipsum lorem lorem api tipsum doherty valar morgulis"
+                       service="service_3" > 
+                    </Card>
+                </div>
+            </div>
+</div>
