@@ -3,12 +3,13 @@ import Layout from "../layouts/Layout.astro";
 import backBtn from "../assets/btn_back.svg?url"
 import ham from "../assets/btn_ham.svg?url"
 import more_arrow from "../assets/more_arrow.svg?url"
+import CardTailwind from '../components/subcomponents/CardTailwind.astro';
 
 ---
 
 <Layout title="Creacion de sitio web" >
 
-	<div class="h-screen w-screen bg-secondary_bg bg-cover overflow-auto overflow-x-hidden" >
+	<div class="h-screen w-screen bg-secondary_bg bg-cover overflow-auto overflow-x-hidden scroll-container" >
         <div class="w-full flex justify-between px-[3em] py-[2em] fixed">
             <button class=""><a href="/#services"><img src={backBtn} alt=""></a>
             <button><img src={ham} alt=""></button>
@@ -36,16 +37,16 @@ import more_arrow from "../assets/more_arrow.svg?url"
         
 
         
-            <div class="h-[180vh] flex justify-around items-start pt-[10em]">
-                <div class="sticky top-[45%]">
+            <div class=" flex justify-between items-start pt-[10em] py w-full">
+                <div class="sticky top-[45%] left-[10%]">
                     <h1 class=" text-light_gray font-[700] text-4xl max-w-lg">
                         Elegi el plan que más se <span class="text-white">adapate</span> a tus <span class="text-white">necesidades</span></h1>
                 </div> 
 
-                <div class="">
+                <div class="h-[150vh] flex flex-col justify-center items-start w-fit ">
 
-                    <div class="h-[50vh]">
-                        <div class="min-h-fit w-[402px]  bg-white bg-opacity-[4%] rounded-3xl border-white border-[1px] border-opacity-[4%] ">
+                    <div class="flex just-center">
+                        <div class="min-h-fit w-[402px]  bg-white bg-opacity-[4%] rounded-3xl border-white border-[1px] border-opacity-[4%] snap-child">
                             <div class="flex-col items-center py-14 px-16 min-w-fit">
                                 <h2 class=" text-white font-extrabold text-center tracking-[3px]">PLAN STARTUP</h2>
                                 <h4 class="text-[10px] text-custom-purple font-medium text-center tracking-wide mt-1">5900 UYU</h4>
@@ -56,29 +57,13 @@ import more_arrow from "../assets/more_arrow.svg?url"
                         </div>
                     </div>
 
-                    <div class="h-[50vh]">
-                        <div class="min-h-fit w-[402px]  bg-white bg-opacity-[4%] rounded-3xl border-white border-[1px] border-opacity-[4%]">
-                            <div class="flex-col items-center py-14 px-16 min-w-fit">
-                                <h2 class=" text-white font-extrabold text-center tracking-[3px]">PLAN STARTUP</h2>
-                                <h4 class="text-[10px] text-custom-purple font-medium text-center tracking-wide mt-1">5900 UYU</h4>
-                        
-                                <p class=" font-['Inter'] text-light_gray text-[10px] mt-[3em] leading-loose">Destinado hacia quienes buscan su primer sitio web, directo sin mucha extensión.</p>
-                                <a class=" self p-[1em] block text-white text-center rounded-lg mt-8 bg-[#E9C1FF] bg-opacity-[27%] text-[10px]"> Mas informacion</a>
-                            </div>
-                        </div>
+                    <div class="snap-child flex just-center">
+                        <CardTailwind />
                     </div>
 
-                    <div class="h-[50vh]">
-                        <div class="min-h-fit w-[402px]  bg-white bg-opacity-[4%] rounded-3xl border-white border-[1px] border-opacity-[4%]">
-                            <div class="flex-col items-center py-14 px-16 min-w-fit">
-                                <h2 class=" text-white font-extrabold text-center tracking-[3px]">PLAN STARTUP</h2>
-                                <h4 class="text-[10px] text-custom-purple font-medium text-center tracking-wide mt-1">5900 UYU</h4>
-                        
-                                <p class=" font-['Inter'] text-light_gray text-[10px] mt-[3em] leading-loose">Destinado hacia quienes buscan su primer sitio web, directo sin mucha extensión.</p>
-                                <a class=" self p-[1em] block text-white text-center rounded-lg mt-8 bg-[#E9C1FF] bg-opacity-[27%] text-[10px]"> Mas informacion</a>
-                            </div>
-                        </div>
-                    </div>
+            
+
+                    
 
                 </div>
                 
@@ -101,5 +86,21 @@ import more_arrow from "../assets/more_arrow.svg?url"
  
 	
 </Layout>
+
+<style>
+    html, body {
+        scroll-behavior: smooth;
+    }
+
+    .scroll-container {
+        scroll-snap-type: y proximity;
+        overflow-y: scroll;
+        height: 100vh;
+    }
+
+    .snap-child {
+        scroll-snap-align: center;
+    }
+</style>
 
 

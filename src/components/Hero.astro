@@ -2,11 +2,12 @@
 const { href, title, body } = Astro.props;
 import Comets from "./Comets.astro";
 import BigPlanet from "./BigPlanet.astro"
+import CardTailwind from './subcomponents/CardTailwind.astro';
 
 ---
 <div id="bg_1" class="py-4 h-[500vh] w-[full] bg-main_bg bg-cover bg-fixed">
 	<Comets/>
-
+    
 	<section class='flex justify-center text-xl font-bold' >
 
 		<h1 id="mainTitle" class=" text-white lg:text-5xl lg:max-w-2xl text-4xl max-w-xl text-center py-4 mt-[35vh] transition ease-out opacity-80">¿Necesitas Transicionar al <span>Mundo Digital?</span></h1>
