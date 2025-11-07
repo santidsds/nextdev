@@ -4,92 +4,88 @@ import backBtn from "../assets/btn_back.svg?url"
 import ham from "../assets/btn_ham.svg?url"
 import more_arrow from "../assets/more_arrow.svg?url"
 import CardTailwind from '../components/subcomponents/CardTailwind.astro';
+import MotionH1 from '../components/subcomponents/MotionH1.jsx';
+import Bg_Scroll from "../components/subcomponents/Bg_Scroll";
+import ContactForm from "../components/ContactForm.astro";
 
 ---
 
 <Layout title="Creacion de sitio web" >
 
 	<div class="h-screen w-screen bg-secondary_bg bg-cover overflow-auto overflow-x-hidden scroll-container" >
-        <div class="w-full flex justify-between px-[3em] py-[2em] fixed">
+        <div class="w-full flex justify-between px-[5em] py-[3em] fixed">
             <button class=""><a href="/#services"><img src={backBtn} alt=""></a>
             <button><img src={ham} alt=""></button>
         </div>
 
-        <div class="h-screen">
-            <div class="text-white font-[800] tracking-widest text-xl w-screen flex-row justify-center items-center text-center p-[3em] ">
-                <h1 class="">CREACION DE SITIO WEB</h1>
-                <div class="h-[4px] w-[40px] bg-white rounded-lg mx-auto mt-4 duration-75 ease-in hover:w-[40px]"></div>
-            </div>
-    
-            <div class=" w-full flex justify-around mt-[15em]">
-                <div>
-                    <h2 class="text-light_gray font-[700] text-2xl max-w-lg">
-                        Te ayudamos a establecer una presencia online <span class="text-white">única y efectiva.</span></h2>
-                    <h2 class="text-light_gray font-[700] text-2xl max-w-lg mt-4">
-                        Nuestros sitios web están <span class="text-white">diseñados desde cero</span> para reflejar <span class="text-white">tu marca y tu visión.</span></h2>
+        <div class="flex justify-start items-start p-[8em] ">
+            <div class=" h-[200vh] z-30">
+                <div class="scroller pt-[15em]">
+                    <div id="firstScrolleable" class="font-black text-light_gray transition-all ease-in-out duration-700 snap-child">
+                        <div class="text-white font-black tracking-widest text-3xl  ">
+                            <h1 class="multicolor">DALE PRESTIGIO A TU MARCA</h1>
+                        
+                        </div>
+                        <div class="opacity-80">
+                            <p class="font-bold text-xl max-w-2xl mt-[1em] text-white ">¿Que da mas <span class="multicolor">confianza</span> que una web <span class="multicolor">profesional?</span></p>
+                            <p class="font-bold text-xl max-w-2xl mt-[1em] text-white ">Nuestros sitios están diseñados completamente desde cero para reflejar <span class="multicolor">tu marca</span> y tu <span class="multicolor">visión.</span></p>
+                        </div>
+                    
+                    </div> 
+                    <div id="secondScrolleable" class="font-black text-light_gray mt-[25em] transition-all ease-in-out duration-700 snap-child ">
+                        <div class="text-white font-black tracking-widest text-3xl  ">
+                            <h1 class="multicolor">¿QUE NOS DESTACA?</h1>
+                        
+                        </div>
+                        <div class="opacity-80">
+                            <p class="font-semibold text-md max-w-2xl mt-[1em] text-white ">Nuestro principal enfoque está en darle profesionalidad a tu marca con una web de <span class="multicolor">altísima calidad, </span>las animaciones y tansiciones elegantes son características claves en el <span class="multicolor">desarrollo web moderno</span>, así como la rápida carga del contenido y la seguridad. </p>
+                            <p class="font-semibold text-md max-w-2xl mt-[1em] text-white ">Nuestros servicios ofrecen las últimas tecnologías y trends en diseño para que tu marca destaque del resto.</p>
+                            <p class="font-semibold text-md max-w-2xl mt-[1em] text-white ">Tenemos un amplio recorrido internacional y ahora llegamos a nuestro queridísimo <span class="multicolor">Uruguay</span> para dar la revolución <span class="multicolor">digital.</span></p>
+                        </div>
+                    
+                    </div> 
+                    <div id="thirdScrolleable" class="font-black text-light_gray mt-[25em] transition-all ease-in-out duration-700 snap-child">
+                        <div class="text-white font-black tracking-widest text-3xl  ">
+                            <h1 class="multicolor">PROTOTIPO DE DISEÑO SIN COSTO</h1>
+                        
+                        </div>
+                        <div class="opacity-80">
+                            <p class="font-bold text-xl max-w-2xl mt-[1em] text-white ">Obtene tu diseño sin costo alguno, si te gusta nos ponemos <span class="multicolor">manos a la obra.</span> </p>
+                            <p class="font-bold text-xl max-w-2xl mt-[1em] text-white ">Todos tus pagos tienen la garantía y confianza que ofrece <span class="multicolor">MercadoPago</span> para que pagues sin preocupaciones. </p>
+                        </div>
+                    
+                    </div> 
+                    
+                    
+                        
                 </div>
-    
-                <div>h</div>
             </div>
-            
-           
+
+            <div id="videoDiv" class="h-screen  fixed right-20 transition-all ease-in-out duration-200">
+                <video autoplay loop class=" w-[850px] opacity-100" src="/src/assets/video.webm"></video>
+                <div class="h-[4px] w-[80px] bg-white rounded-lg mx-auto mt-4 duration-75 ease-in hover:w-[40px]"></div>
+            </div>
         </div>
         
-
         
-            <div class=" flex justify-between items-start pt-[10em] py w-full">
-                <div class="sticky top-[45%] left-[10%]">
-                    <h1 class=" text-light_gray font-[700] text-4xl max-w-lg">
-                        Elegi el plan que más se <span class="text-white">adapate</span> a tus <span class="text-white">necesidades</span></h1>
-                </div> 
-
-                <div class="h-[150vh] flex flex-col justify-center items-start w-fit ">
-
-                    <div class="flex just-center">
-                        <div class="min-h-fit w-[402px]  bg-white bg-opacity-[4%] rounded-3xl border-white border-[1px] border-opacity-[4%] snap-child">
-                            <div class="flex-col items-center py-14 px-16 min-w-fit">
-                                <h2 class=" text-white font-extrabold text-center tracking-[3px]">PLAN STARTUP</h2>
-                                <h4 class="text-[10px] text-custom-purple font-medium text-center tracking-wide mt-1">5900 UYU</h4>
-                        
-                                <p class=" font-['Inter'] text-light_gray text-[10px] mt-[3em] leading-loose">Destinado hacia quienes buscan su primer sitio web, directo sin mucha extensión.</p>
-                                <a class=" self p-[1em] block text-white text-center rounded-lg mt-8 bg-[#E9C1FF] bg-opacity-[27%] text-[10px]"> Mas informacion</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="snap-child flex just-center">
-                        <CardTailwind />
-                    </div>
-
+        <div class=" flex justify-between items-start pt-[10em] py w-full z-30 snap-child h-[150vh]">
             
-
-                    
-
-                </div>
-                
-            </div>
+            <div id="fourthScrolleable" class="sticky top-[45%] left-[10%]">
+                <h1 class=" text-light_gray font-[700] text-4xl max-w-xl">
+                    Obtene tu presupuesto<span class="text-white"> personalizado</span> y un prototipo de diseño <span class="text-white">sin costo</span>
+                </h1>
+            </div> 
             
-            
-
-        
-      
-        
-    
-
-
+            <div id="fifthScrolleable" class="sticky top-[25%] right-[15%] transition-all ease-in duration-100 delay-300">
+                <ContactForm/>
+            </div> 
+        </div>
 	</div>
-
-	
-
-    
-
- 
-	
 </Layout>
 
 <style>
     html, body {
-        scroll-behavior: smooth;
+        
     }
 
     .scroll-container {
@@ -101,6 +97,123 @@ import CardTailwind from '../components/subcomponents/CardTailwind.astro';
     .snap-child {
         scroll-snap-align: center;
     }
+
+    
+
+    .multicolor {
+    background: linear-gradient(to right, #E9C1FF, #4b88d3); /* Standard syntax; “to right” is explicit direction */
+    background: -webkit-linear-gradient(left, #E9C1FF, #5aa0f6); /* For older WebKit browsers */
+    -webkit-background-clip: text;
+    background-clip: text; /* Standard syntax */
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback for non-WebKit browsers */
+
+    }
 </style>
 
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+    const firstScrolleable = document.getElementById('firstScrolleable');
+    const secondScrolleable = document.getElementById('secondScrolleable');
+    const thirdScrolleable = document.getElementById('thirdScrolleable');
+    const fourthScrolleable = document.getElementById('fourthScrolleable');
+    const fifthScrolleable = document.getElementById('fifthScrolleable');
+    const video = document.getElementById('videoDiv');
 
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                firstScrolleable.style.opacity = '1';
+                video.style.opacity = '1';
+            } else {
+                firstScrolleable.style.opacity = '0';
+            }
+        });
+    }, {
+        root: null,
+        threshold: 1, // triggers when ~10% is visible
+        rootMargin: '-300px 0px 300px 0px' // trigger slightly earlier when exiting from the bottom
+    });
+
+    const observer2 = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                secondScrolleable.style.opacity = '1';
+                video.style.opacity = '1';
+
+            } else {
+                secondScrolleable.style.opacity = '0';
+                
+                
+            }
+        });
+    }, {
+        root: null,
+        threshold: 1, // triggers when ~10% is visible
+        rootMargin: '-300px 0px 300px 0px' // trigger slightly earlier when exiting from the bottom
+    });
+
+    const observer3 = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                thirdScrolleable.style.opacity = '1';
+                video.style.opacity = '1';
+            } else {
+                thirdScrolleable.style.opacity = '0';
+            }
+        });
+    }, {
+        root: null,
+        threshold: 1, // triggers when ~10% is visible
+        rootMargin: '-200px 0px 0px 0px' // trigger slightly earlier when exiting from the bottom
+    });
+
+    const observer4 = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+
+                video.style.opacity = '0';
+            } else {
+                thirdScrolleable.style.opacity = '0';
+
+            }
+        });
+    }, {
+        root: null,
+        threshold: 1, // triggers when ~10% is visible
+        rootMargin: '-200px 0px 0px 0px' // trigger slightly earlier when exiting from the bottom
+    });
+
+    const observer5 = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+
+               fifthScrolleable.style.opacity = '1';
+               fifthScrolleable.style.transform = 'translateX(-10px)';
+            } else {
+                fifthScrolleable.style.opacity = '0';
+                fifthScrolleable.style.transform = 'translateX(10px)';
+                
+
+            }
+        });
+    }, {
+        root: null,
+        threshold: 1, // triggers when ~10% is visible
+        rootMargin: '0px 0px 0px 0px' // trigger slightly earlier when exiting from the bottom
+    });
+
+    //HACER UNA TERCERA OBSERVACION PARA QUE CUANDO EL ULTIMO SCROLLEABLE ESTE INTERSECTANDO LA PANTALLA, EL VIDEO SE OCULTE. ULTIMO SCROLLEABLE: ("Obtene tu presupuesto personalizado y un prototipo de diseño sin costo")
+
+
+    observer.observe(firstScrolleable);
+    observer2.observe(secondScrolleable);
+    observer3.observe(thirdScrolleable);
+    observer4.observe(fourthScrolleable);
+    observer5.observe(fifthScrolleable);
+    
+});
+
+
+</script>

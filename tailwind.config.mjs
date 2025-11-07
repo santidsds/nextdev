@@ -5,7 +5,7 @@ export default {
 	theme: {
 		extend: {
 			backgroundImage: {
-				'main_bg': "url('/src/assets/Frame11.jpg')",
+				'main_bg': "url('/src/assets/Frame11T.webp')",
 				'secondary_bg': "url('/src/assets/bg3_180.jpg')",
 			  },
 			animation: {

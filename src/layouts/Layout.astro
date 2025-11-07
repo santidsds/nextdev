@@ -12,7 +12,7 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0 ">
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
@@ -27,7 +27,22 @@ const { title } = Astro.props;
 		font-family: 'Poppins', sans-serif;
 		scroll-behavior: smooth;
 		scroll-snap-type: y mandatory;
+		background-image: url('/Frame11T.webp');
+		background-size: cover;
+		background-position:center;
+		background-attachment: fixed;
+		overflow-x: hidden;
+
 		
+	}
+
+	@media (max-width: 500px) {
+		html, body {
+			background-image: url('/mobile_bg.jpg');         
+			background-attachment: scroll;
+			background-size: contain                                                                                                                                                                                                                                                           ;
+			
+		}
 	}
 
 	*::-webkit-scrollbar {

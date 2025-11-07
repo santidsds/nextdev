@@ -1,3 +1,7 @@
-<img id="bigPlanet" class="bigPlanet absolute mix-blend-luminosity opacity-40 w-200px mt-[60vh] z-20 " src="/public/planet-svg.svg" alt="">
-<img class="bigPlanet absolute mix-blend-multiply opacity-70 w-200px mt-[60vh] z-20" src="/public/planet-svg.svg" alt="">
-<img class="bigPlanet absolute mix-blend-overlay w-200px mt-[60vh] z-20" src="/public/planet-svg.svg" alt="">
+---
+import planet from '/planet-svg.svg?url';
+---
+
+<img id="bigPlanet" class="bigPlanet absolute mix-blend-luminosity opacity-20 w-800px mt-[60vh] z-20 " src={planet} alt="">
+<img class="bigPlanet absolute mix-blend-multiply opacity-70 w-800px mt-[60vh] z-20" src={planet} alt="">
+<img class="bigPlanet absolute mix-blend-overlay w-800px mt-[60vh] z-20" src={planet} alt="">

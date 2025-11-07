@@ -1,18 +1,9 @@
 ---
 const { href, title, body } = Astro.props;
 import nextdev from "../assets/nextdev_logo.svg?url"
-import Dropdown from "./Dropdown"
 ---
-<nav class="absolute bg-gradient-to-b from-black to-transparent h-[6em] w-full px-[8em] pt-4 z-10 ">
-	<div class="flex justify-between mt-5">
-        <a href="/"><img src={nextdev} alt=""></a>
-        <button>s</button>
-        <li class="text-white flex gap-5 z-50 items-center">
-            <Dropdown client:load/>
-        
-            <button class="inline-flex items-center text-sm font-semibold leading-6 text-white border-[1px] border-white py-2 px-6 rounded-lg hover:bg-custom-purple hover:text-black hover:border-custom-purple">Prototipo sin costo</button>
-            
-        
-        </li>
+<nav class="absolute bg-gradient-to-b from-black to-transparent h-[6em] w-screen pt-8 z-10 ">
+	<div id="navbar" class="flex justify-center translate-y-[-200px] opacity-0 transition-all ease-out duration-500 delay-300">
+        <a href="/"><img class=" w-[250px] sm:w-[400px]" src={nextdev} alt=""></a>
     </div>
 </nav>
