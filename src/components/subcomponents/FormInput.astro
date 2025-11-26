@@ -1,0 +1,10 @@
+---
+const {service, idLabel, classLabel, forLabel, idInput, valueInput } = Astro.props;
+---
+
+<div class="">
+<label id={idLabel} class=` ${classLabel}` for={forLabel}>{service}</label>
+    <input id={idInput} name="servicio" class="opacity-0" type="radio" value={valueInput}>
+</div>
+
+

@@ -1,7 +1,19 @@
 ---
 import MotionH1 from '../components/subcomponents/MotionH1.jsx'
+import ContactForm from '../components/ContactForm.astro'
 ---
 
-<div class="bg-[#0D0D0D] h-screen w-screen flex justify-center p-6">
-    <h1>alo</h1>
+<div class="bg-[#0D0D0D] h-screen w-screen flex justify-center p-6 overflow-hidden">
+    <div class=" flex justify-between items-start pt-[5em] w-full z-30 snap-child h-[150vh]">
+            
+        <div id="fourthScrolleable" class="sticky top-[45%] left-[10%]">
+            <h1 class=" text-light_gray font-[700] text-4xl max-w-xl">
+                Obtene tu presupuesto<span class="text-white"> personalizado</span> y un prototipo de diseño <span class="text-white">sin costo</span>
+            </h1>
+        </div> 
+        
+        <div id="fifthScrolleable" class="sticky top-[25%] right-[15%] transition-all ease-in duration-100 delay-300">
+            <ContactForm/>
+        </div> 
+    </div>
 </div>

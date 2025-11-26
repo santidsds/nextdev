@@ -1,15 +1,11 @@
 ---
-const { href, title, body } = Astro.props;
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
-import Services from "../components/Services.astro";
 import Comets from "../components/Comets.astro";
 import BigPlanet from "../components/BigPlanet.astro"
-import CardTailwind from '../components/subcomponents/CardTailwind.astro';
 import MotionH1 from '../components/subcomponents/MotionH1.jsx';
 import mplogo from "/logo_and_text.svg?url"
 import mphero from "/mp_payment_hero.svg?url"
-import bg_payment from "./assets/bg3.jpg?url"
 import DownArrowAnimated from "../components/subcomponents/DownArrowAnimated.jsx"
 import Bg_Scroll from "../components/subcomponents/Bg_Scroll.jsx"
 import Box_Animated from "../components/subcomponents/Box_Animated.jsx"
@@ -26,9 +22,9 @@ import icon_cart from "../assets/icon-of-shopcart-and-moneysign.svg?url"
     <section class='flex justify-center text-xl font-bold '>
         <div class="flex flex-col justify-center items-center ">
             <h1 id="mainTitle" class="opacity-0 text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl max-w-xs sm:max-w-sm md:max-w-md lg:max-w-2xl text-center py-4 mt-[10em] lg:mt-[7em] transition-all duration-300 delay-100 ease-in">¿Necesitas Transicionar al <span>Mundo Digital?</span></h1>
-            <div class="mt-[1em]"> 
+            <!-- <div class="mt-[1em]"> 
                 <DownArrowAnimated client:load tailwind="" />
-            </div>
+            </div> -->
         </div>
         
         <BigPlanet/>
@@ -36,10 +32,10 @@ import icon_cart from "../assets/icon-of-shopcart-and-moneysign.svg?url"
 
     <section id="scroll_section" class="mt-[20em] sm:mt-[25em] md:mt-[30em] lg:mt-[35em] 2xl:mt-[50em] w-full min-h-[200em] sm:h-[220vh] md:h-[240vh] lg:h-[280vh] mb-[10em]">
         <div id="first_h1" class="w-full fixed top-0 left-0 mt-[10vh] transition-all ease-in delay-[0.5] opacity-0">
-            <MotionH1 text="Nos encargamos de crear experiencias web únicas" tailwind="text-2xl sm:text-3xl font-bold text-white text-center" client:load />
+            <MotionH1 seconds={0.5} text="Nos encargamos de crear experiencias web únicas" tailwind="opacity-80 text-2xl sm:text-3xl font-bold text-white text-center" client:load />
         </div>
 
-        <div id="postPlanetSection" class="px-[2em] sm:px-[3em] md:px-[4em] lg:px-[5em] text-white transition ease-in delay-75 flex justify-center itmes-center">
+        <div id="postPlanetSection" class="px-[2em] sm:px-[3em] md:px-[4em] lg:px-[5em] text-white transition ease-in delay-75 flex justify-center items-center">
             <div id="hero_animation_1" class="flex-col text-center lg:text-left lg:flex-row opacity-0 transition ease-in flex justify-center items-center top-0 left-0 w-full h-screen gap-[5em] sm:gap-[10em] md:gap-[5em] xl:gap-[10em] fixed">
                 <p class="font-bold text-lg sm:text-xl max-w-xs sm:max-w-sm md:max-w-md text-gray-300">Las mejores <span class="!text-white">animaciones</span> para destacar de tu competencia,</p>
                 <img class="w-[320px] sm:w-[500px] md:w-[550px] lg:w-[600px] xl:w-[700px]" src={mockup} alt="">
@@ -51,22 +47,22 @@ import icon_cart from "../assets/icon-of-shopcart-and-moneysign.svg?url"
                 <img class="w-[320px] sm:w-[500px] md:w-[550px] lg:w-[600px] xl:w-[700px]" src={mockup} alt="">
             </div>
 
-            <div id="hero_animation_3" class="flex-col text-center lg:text-left lg:flex-row o pacity-0 transition ease-in flex justify-center items-center top-0 left-0 w-full h-screen gap-[5em] sm:gap-[10em] md:gap-[5em] xl:gap-[10em] fixed">
-                <p class="font-bold text-lg sm:text-xl max-w-xs sm:max-w-sm md:max-w-md text-gray-300">Optimizado para <span class="!text-white">aumentar el trafico</span> hacia tu web de manera óptima</p>
+            <div id="hero_animation_3" class="flex-col text-center lg:text-left lg:flex-row opacity-0 transition ease-in flex justify-center items-center top-0 left-0 w-full h-screen gap-[5em] sm:gap-[10em] md:gap-[5em] xl:gap-[10em] fixed">
+                <p class="font-bold text-lg sm:text-xl max-w-xs sm:max-w-sm md:max-w-md text-gray-300">Diseñados para atraer más <span>visitas</span> y convertirlas en <span> clientes</span></p>
                 <img class="w-[320px] sm:w-[500px] md:w-[550px] lg:w-[600px] xl:w-[700px]" src={mockup} alt="">
             </div>
         </div>
     </section>
     
-    <section id="tech_section" class="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] flex flex-col justify-center items-center mb-[10em]">
+    <section id="tech_section" class="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] flex flex-col justify-center items-center mb-28">
         <div id="tech_h1" class="w-full">
-            <MotionH1 seconds=0.5 text="Utilizamos las ultimas tecnologias para el mejor rendimiento" tailwind="text-2xl sm:text-3xl font-bold text-white text-center" client:load />
+            <MotionH1 seconds=0.5 text="Utilizamos las ultimas tecnologias para el mejor rendimiento" tailwind="opacity-80 text-2xl sm:text-3xl font-bold text-white text-center" client:load />
         </div>
-        <div class="p-[5em] sm:p-[7em] md:p-[10em] flex gap-5 sm:gap-7 md:gap-10">
-            <div class="w-[50px] sm:w-[75px] md:w-[100px] h-[50px] sm:h-[75px] md:h-[100px] bg-white"></div>
-            <div class="w-[50px] sm:w-[75px] md:w-[100px] h-[50px] sm:h-[75px] md:h-[100px] bg-white"></div>
-            <div class="w-[50px] sm:w-[75px] md:w-[100px] h-[50px] sm:h-[75px] md:h-[100px] bg-white"></div>
-            <div class="w-[50px] sm:w-[75px] md:w-[100px] h-[50px] sm:h-[75px] md:h-[100px] bg-white"></div>
+        <div class="p-[5em] sm:p-[7em] md:p-20 flex gap-5 sm:gap-7 md:gap-10 opacity-90">
+            <img src="public/iconAstro.png" alt="">
+            <img src="public/iconTailwind.png" alt="">
+            <img src="public/iconReact.png" alt="">
+            <img class="w-[96px] h-[96px]" src="public/iconGsap.svg" alt="">
         </div>
         
     </section>
@@ -74,30 +70,30 @@ import icon_cart from "../assets/icon-of-shopcart-and-moneysign.svg?url"
     <Bg_Scroll client:load />
     
 
-    <section class="px-[1em] sm:px-[2em]">
+    <section class="px-[1em] sm:px-[2em] ">
         <div id="payment" class='flex flex-col md:flex-row items-center justify-around w-full text-lg sm:text-xl font-bold h-min md:h-[35vh] bg-[#00BCFF] rounded-3xl p-[3em] xl:p-[5em]'>
             <div class="flex justify-center gap-[3em] sm:gap-[5em] md:gap-[7em] items-center z-30">
                 <img class="z-20 w-[600px] sm:w-[600px]" src={mphero} alt="">
             </div>
 
             <div class="flex flex-col justify-center gap-4 sm:gap-6 md:gap-8">
-                <h1 class="text-2xl sm:text-3xl xl:max-w-lg z-20 overflow-hidden text-white">Todos tus pagos respaldados por MercadoPago Uruguay</h1>
-                <p class="font-normal text-xs sm:text-base text-white z-30">Paga sin preocupaciones, todas las transacciones a tráves de los servicios de Mercado Pago Uruguay.</p>
+                <h1 class="text-2xl sm:text-3xl xl:max-w-lg z-20 overflow-hidden text-white">Paga con total confianza.</h1>
+                <p class="mt-[-2em] font-[400] text-xs sm:text-base text-white z-30">Todos los pagos se procesan de forma segura con Mercado Pago Uruguay.</p>
                 <img class="text-center z-20 w-[100px] sm:w-[150px] md:w-[200px]" src={mplogo} alt="logo"/>
             </div>
         </div>
     </section>
 
     <div id="services" class="mt-[10em] md:mt-[30em] flex-col flex justify-center items-center z-50 bg-fixed overflow-hidden ">
-        <div class="z-50 sm:mb-[5em]"><MotionH1 client:load  seconds="0.5" text="En que podemos ayudarte?" tailwind='text-white font-bold text-2xl sm:text-3xl'/></div>    
+        <div class="z-50 sm:mb-[5em]"><MotionH1 client:load  seconds="0.5" text="¿En que podemos ayudarte?" tailwind='text-white font-bold text-2xl sm:text-3xl'/></div>    
 		
         <div class="z-50 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-12">
-            <a href="/service_1"><Box_Animated img={icon_webdev} title="Creacion de sitio web" p="Te ayudamos a establecer tu marca, incluye diseño de logos, paleta de colores, etc." client:load></Box_Animated></a>
-            <a href="/service_2"><Box_Animated img={icon_social} title="Renovación de sitio web" p="Creación de posts publicitarios, historias, etcts publicitarios, historias, etc"  client:load ></Box_Animated></a>
-            <a href="/service_3"><Box_Animated img={icon_cart} title="Creacion de App Web" p="Te ayudamos a establecer tu marca, incluye diseño de logos, paleta de colores, etc." client:load></Box_Animated></a>
-            <a href="/service_3"><Box_Animated img={icon_cart} title="Diseño de marca" p="Te ayudamos a establecer tu marca, incluye diseño de logos, paleta de colores, etc." client:load></Box_Animated></a>
-            <a href="/service_3"><Box_Animated img={icon_cart} title="Diseños gráficos" p="Abarca diseño de posts para redes sociales, ads, stories" client:load></Box_Animated></a>
-            <a href="/service_3"><Box_Animated img={icon_cart} title="¡Contactanos!" p="¿No sabes bien que elegir? Ponete en contacto, comentanos tu proyecto y recibí asesoría personalizada sin costo!" client:load></Box_Animated></a>
+            <a href="/service_1"><Box_Animated img={icon_webdev} title="Diseño y desarrollo web" p="Creamos tu sitio desde cero: moderno, rápido y adaptado a tu negocio." client:load></Box_Animated></a>
+            <a href="/service_2"><Box_Animated img={icon_social} title="Rediseño y modernización" p="Actualizamos tu sitio web con una nueva imagen, mejor rendimiento y esperiencia de usuario."  client:load ></Box_Animated></a>
+            <a href="/service_3"><Box_Animated img={icon_cart} title="Aplicaciónes web personalizadas" p="Soluciones interactivas y a medida para proyectos más avanzados." client:load></Box_Animated></a>
+            <a href="/service_3"><Box_Animated img={icon_cart} title="Identidad visual y banding" p="Diseñamos logo, colores y estilo visual para que tu marca se destaque." client:load></Box_Animated></a>
+            <a href="/service_3"><Box_Animated img={icon_cart} title="Contenido visual para redes" p="Diseños atractivos para publicaciones, historias y anuncios" client:load></Box_Animated></a>
+            <a href="/contact"><Box_Animated img={icon_cart} title="Asesoría gratuita" p="¿No sabés por donde empezar? Contanos tu idea y te orientamos sin compromiso." client:load></Box_Animated></a>
 		</div>
 
         
@@ -105,103 +101,158 @@ import icon_cart from "../assets/icon-of-shopcart-and-moneysign.svg?url"
     </div>
 </Layout>
 <style>
-    span {
-    background: linear-gradient(to right, #E9C1FF, #4b88d3); /* Standard syntax; “to right” is explicit direction */
-    background: -webkit-linear-gradient(left, #E9C1FF, #4278B9); /* For older WebKit browsers */
+  span {
+    background: linear-gradient(to right, #E9C1FF, #4b88d3);
+    background: -webkit-linear-gradient(left, #E9C1FF, #4278B9);
     -webkit-background-clip: text;
-    background-clip: text; /* Standard syntax */
+    background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: transparent; /* Fallback for non-WebKit browsers */
-    }
+    color: transparent;
+  }
+
+  #hero_animation_1,
+  #hero_animation_2,
+  #hero_animation_3,
+  .bigPlanet {
+    will-change: transform, opacity;
+  }
 </style>
 
 <script>
-    const elements = {
-    mainTitle: document.getElementById('mainTitle'),
-    motion_icon: document.getElementById('motion_icon'),
-    hero_animation_1: document.getElementById('hero_animation_1'),
-    hero_animation_2: document.getElementById('hero_animation_2'),
-    hero_animation_3: document.getElementById('hero_animation_3'),
-    planets: document.querySelectorAll('.bigPlanet')
-};
+  const select = (id) => document.getElementById(id);
 
-const opacityRanges = [
-    { element: 'hero_animation_1', ranges: [
+  const heroOpacityRanges = [
+    {
+      element: 'hero_animation_1',
+      ranges: [
         { start: 918, end: 1020, opacity: 0 },
         { start: 1020, end: 1122, opacity: 0.5 },
         { start: 1122, end: 1600, opacity: 1 },
         { start: 1600, end: 1800, opacity: 0.5 },
-        { start: 1800, end: Infinity, opacity: 0 }
-    ]},
-    { element: 'hero_animation_2', ranges: [
+        { start: 1800, end: Infinity, opacity: 0 },
+      ],
+    },
+    {
+      element: 'hero_animation_2',
+      ranges: [
         { start: 0, end: 1850, opacity: 0 },
         { start: 1850, end: 2000, opacity: 0.5 },
         { start: 2000, end: 2500, opacity: 1 },
         { start: 2500, end: 2700, opacity: 0.5 },
-        { start: 2700, end: Infinity, opacity: 0 }
-    ]},
-    { element: 'hero_animation_3', ranges: [
+        { start: 2700, end: Infinity, opacity: 0 },
+      ],
+    },
+    {
+      element: 'hero_animation_3',
+      ranges: [
         { start: 0, end: 2700, opacity: 0 },
         { start: 2700, end: 2850, opacity: 0.5 },
         { start: 2850, end: 3350, opacity: 1 },
         { start: 3350, end: 3550, opacity: 0.5 },
-        { start: 3550, end: Infinity, opacity: 0 }
-    ]}
-];
+        { start: 3550, end: Infinity, opacity: 0 },
+      ],
+    },
+  ];
+  
 
-function setOpacity(element, scrollPosition, ranges) {
-    for (const range of ranges) {
+  const heroOpacityTargets = heroOpacityRanges.map(({ element, ranges }) => ({
+    node: select(element),
+    ranges,
+  }));
+
+  const planetElements = Array.from(document.querySelectorAll('.bigPlanet'));
+  const mainTitle = select('mainTitle');
+
+  const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let prefersReducedMotion = reduceMotionQuery.matches;
+  reduceMotionQuery.addEventListener('change', (event) => {
+    prefersReducedMotion = event.matches;
+  });
+
+  // Toggle hero section opacity smoothly based on scroll progress.
+  const applyHeroOpacity = (scrollPosition) => {
+    heroOpacityTargets.forEach(({ node, ranges }) => {
+      if (!node) return;
+      for (const range of ranges) {
         if (scrollPosition >= range.start && scrollPosition < range.end) {
-            element.style.opacity = range.opacity;
-            break;
+          node.style.opacity = range.opacity;
+          break;
         }
-    }
-}
-
-window.addEventListener('DOMContentLoaded', function() {
-    const mainTitle = document.getElementById('mainTitle')
-    const navbar = document.getElementById('navbar');
-    const first_h1 = document.getElementById('first_h1');
-    const hero_animation_3 = document.getElementById('hero_animation_3');
-    const scroll_section = document.getElementById('scroll_section');;
-
-    mainTitle.style.opacity = '80%'
-    mainTitle.style.transform = 'translateY(0px)';
-    navbar.style.opacity = '80%'
-    navbar.style.transform = 'translateY(0px)';
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                first_h1.style.opacity = '1';
-            } else {
-                first_h1.style.opacity = '0';
-            }
-        });
-    },{ 
-        rootMargin: '-200px',
-        threshold: 0.1
+      }
     });
-    observer.observe(scroll_section);
-});
+  };
 
-window.addEventListener('scroll', function() {
-    const scrollPosition = window.scrollY;
+  // Move the planets for a parallax effect unless the user prefers reduced motion.
+  const applyParallax = (scrollPosition) => {
+    if (prefersReducedMotion) return;
     const translateYValue = `${-(scrollPosition * 0.5)}px`;
-
-    elements.planets.forEach(planet => {
-        planet.style.transform = `translateY(${translateYValue})`;
+    planetElements.forEach((planet) => {
+      planet.style.transform = `translateY(${translateYValue})`;
     });
+  };
 
-    elements.mainTitle.style.opacity = scrollPosition > 100 ? '0' : '80';
-    elements.motion_icon.style.opacity = scrollPosition > 100 ? '0' : '80';
+  // Fade the main title as the user scrolls away from the hero.
+  const updateHeroTitleOpacity = (scrollPosition) => {
+    if (!mainTitle) return;
+    mainTitle.style.opacity = scrollPosition > 100 ? '0' : '0.8';
+  };
 
-    opacityRanges.forEach(item => {
-        setOpacity(elements[item.element], scrollPosition, item.ranges);
-    });
-});
+  const onScrollFrame = () => {
+    const scrollPosition = window.scrollY;
+    applyParallax(scrollPosition);
+    updateHeroTitleOpacity(scrollPosition);
+    applyHeroOpacity(scrollPosition);
+    ticking = false;
+  };
+
+  let ticking = false;
+  const handleScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(onScrollFrame);
+  };
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+
+  // Kick off intro animations and the sticky heading when the DOM is ready.
+  const initIntroAnimations = () => {
+    const navbar = document.getElementById('navbar');
+    const firstHeading = document.getElementById('first_h1');
+    const scrollSection = document.getElementById('scroll_section');
+
+    if (mainTitle) {
+      mainTitle.style.opacity = '0.8';
+      mainTitle.style.transform = 'translateY(0px)';
+    }
+
+    if (navbar) {
+      navbar.style.opacity = '0.8';
+      navbar.style.transform = 'translateY(0px)';
+    }
+
+    if (firstHeading && scrollSection) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            firstHeading.style.opacity = entry.isIntersecting ? '1' : '0';
+          });
+        },
+        {
+          rootMargin: '-200px',
+          threshold: 0.1,
+        }
+      );
+      observer.observe(scrollSection);
+    }
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initIntroAnimations);
+  } else {
+    initIntroAnimations();
+  }
 </script>
-
 
 
 

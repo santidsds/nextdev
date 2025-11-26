@@ -1,30 +1,324 @@
+---
+import FormInput from "./subcomponents/FormInput.astro"
+---
 
-    
+<form class="w-[45vw] h-[82vh] text-md  shadow-[0px_0px_20px_2px] drop-shadow-2xl shadow-[#b28bae36] border-2 border-[#2020207e] rounded-3xl p-24 text-[#C7C7C7] italic"
+action="https://formspree.io/f/xkgplzdg"
+method="POST">
 
-<form class="p-[2.5em] bg-white rounded-2xl shadow-black shadow-2xl w-[600px]"
-  action="https://formspree.io/f/xkgplzdg"
-  method="POST">
-
-  <div class="p-[2em] flex flex-col justify-start items-start ">
-    <div class="mb-[3em]">
-        <h1 class=" font-extrabold text-3xl mb-[0.5em]">Contactanos</h1>
-        <p class="text-[15px]">Despeja todas tus dudas sin compromiso, </p>
+  <div class="flex justify-start items-start gap-6 opacity-100">
+    <div class="flex flex-col w-full"> 
+      <label id="nameLabel" class="mb-[-10px]" for="nameInput">Nombre / Empresa *</label>
+      <input class="text-white opacity-40 py-[0.10rem] roboto non-italic text-xs bg-transparent focus:outline-none border-b-2 border-[#9A9A9A] border-opacity-50 " id="nameInput" type="text" name="name">
     </div>
-
-    <div class="text-sm font-sans flex flex-col justify-start items-start gap-4 p-2 w-full">
-            <label class="flex flex-col justify-center items-start w-full mb-[1em] ">
-            Email:
-            <input class="text-gray-500 outline-none p-1 border-gray-900 border-b-[1px] w-full" type="email" name="email">
-            </label>
-    
-            <label class="flex flex-col justify-center items-start gap-2 w-full">
-            Contanos un poco mas de tu proyecto:
-            <textarea  class=" bg-opacity-0 outline-none w-full p-1 border-gray-900 border-b-[1px]" name="message"></textarea>
-            </label>
-
-            <button class="mt-[4em] rounded-lg p-4 w-full bg-black text-white" type="submit">Enviar</button>
+  
+    <div class="flex flex-col w-full"> 
+      <label id="emailLabel" class="mb-[-10px]" for="emailInput">Email *</label>
+      <input class="text-white opacity-40 py-[0.10rem] roboto non-italic text-xs bg-transparent focus:outline-none border-b-2 border-[#9A9A9A] border-opacity-50 " id="emailInput" type="email" name="email">
     </div>
   </div>
+
+  <div class="mt-14 py-[-0.10rem]">
+    <p class="">Servicio *</p>
+    
+    <div class="mt-6 roboto not-italic text-[11px] flex flex-wrap gap-y-7">
+
+      <FormInput service="Diseño y desarrollo web" idLabel="radioDesignLabel" classLabel="serviceRadio" forLabel="radioDesign" idInput="radioDesign" valueInput="Diseño y desarrollo web" />
+      <FormInput service="Aplicación web" idLabel="radioAppLabel" classLabel="serviceRadio" forLabel="radioApp" idInput="radioApp" valueInput="Aplicacion web" />
+      <FormInput service="Identidad visual y branding" idLabel="radioBrandingLabel" classLabel="serviceRadio" forLabel="radioBranding" idInput="radioBranding" valueInput="Identidad visual y branding" />
+      <FormInput service="Contenido visual para redes" idLabel="radioContentLabel" classLabel="serviceRadio" forLabel="radioContent" idInput="radioContent" valueInput="Contenido visual para redes" />
+      <FormInput service="No estoy seguro/a" idLabel="radioUnsureLabel" classLabel="serviceRadio" forLabel="radioUnsure" idInput="radioUnsure" valueInput="No estoy seguro/a" />
+
+    </div>
+  </div>
+
+  <div class="">
+    <div id="designPrices" class="mt-14">
+      <p>Presupuesto para el proyecto *</p>
+
+      <div class="mt-6 roboto not-italic text-[11px] flex flex-wrap gap-y-7">
+        <FormInput service="Menos de UYU 8000" idLabel="designPriceLabel_1" classLabel="serviceRadio" forLabel="designPriceInput_1" idInput="designPriceInput_1" valueInput="Menos de UYU 8000" />
+        <FormInput service="UYU 8.000 - UYU 15.000" idLabel="designPriceLabel_2" classLabel="serviceRadio" forLabel="designPriceInput_2" idInput="designPriceInput_2" valueInput="UYU 8000 - UYU 15000" />
+        <FormInput service="UYU 15.000 - UYU 25.000" idLabel="designPriceLabel_3" classLabel="serviceRadio" forLabel="designPriceInput_3" idInput="designPriceInput_3" valueInput="UYU 15000 - UYU 25000" />
+        <FormInput service="Más de UYU 25.000" idLabel="designPriceLabel_4" classLabel="serviceRadio" forLabel="designPriceInput_4" idInput="designPriceInput_4" valueInput="Mas de 25.000" />
+
+      </div>
+    </div>
+
+    <div id="appPrices" class="mt-14 hidden">
+      <p>Presupuesto para el proyecto *</p>
+
+      <div class="mt-6 roboto not-italic text-[11px] flex flex-wrap gap-y-7">
+        <FormInput service="Menos de UYU 6000" idLabel="appPriceLabel_1" classLabel="serviceRadio" forLabel="appPriceInput_1" idInput="appPriceInput_1" valueInput="Menos de UYU 8000" />
+        <FormInput service="UYU 6.000 - UYU 12000" idLabel="appPriceLabel_2" classLabel="serviceRadio" forLabel="appPriceInput_2" idInput="appPriceInput_2" valueInput="UYU 8000 - UYU 15000" />
+        <FormInput service="Más de UYU 12000" idLabel="appPriceLabel_3" classLabel="serviceRadio" forLabel="appPriceInput_3" idInput="appPriceInput_3" valueInput="Mas de UYU 12000" />
+      </div>
+    </div>
+
+    <div id="brandingPrices" class="mt-14 hidden">
+      <p>Presupuesto para el proyecto *</p>
+
+      <div class="mt-6 roboto not-italic text-[11px] flex flex-wrap gap-y-7">
+        <FormInput service="Menos de UYU 8000" idLabel="brandingPriceLabel_1" classLabel="serviceRadio" forLabel="brandingPriceInput_1" idInput="brandingPriceInput_1" valueInput="Menos de UYU 8000" />
+        <FormInput service="UYU 8000 - UYU 15000" idLabel="brandingPriceLabel_2" classLabel="serviceRadio" forLabel="brandingPriceInput_2" idInput="brandingPriceInput_2" valueInput="UYU 8000 - UYU 15000" />
+        <FormInput service="UYU 15000 - UYU 25000" idLabel="brandingPriceLabel_3" classLabel="serviceRadio" forLabel="brandingPriceInput_3" idInput="brandingPriceInput_3" valueInput="UYU 15000 - UYU 25000" />
+      </div>
+    </div>
+
+    <div id="contentPrices" class="mt-14 hidden">
+      <p>Presupuesto para el proyecto *</p>
+
+      <div class="mt-6 roboto not-italic text-[11px] flex flex-wrap gap-y-7">
+        <FormInput service="Menos de UYU 8000" idLabel="contentPriceLabel_1" classLabel="serviceRadio" forLabel="contentPriceInput_1" idInput="contentPriceInput_1" valueInput="Menos de UYU 8000" />
+        <FormInput service="UYU 8000 - UYU 15000" idLabel="contentPriceLabel_2" classLabel="serviceRadio" forLabel="contentPriceInput_2" idInput="contentPriceInput_2" valueInput="UYU 8000 - UYU 15000" />
+        <FormInput service="UYU 15000 - UYU 25000" idLabel="contentPriceLabel_3" classLabel="serviceRadio" forLabel="contentPriceInput_3" idInput="contentPriceInput_3" valueInput="UYU 15000 - UYU 25000" />
+      </div>
+    </div>
+
+    <div id="unsurePrices" class="mt-14 hidden">
+      <p class="">Presupuesto para el proyecto *</p>
+      <div class="roboto text-xs text-[#9A9A9A] py-3 px-3">
+        <p class="">No te preocupes, vamos a estudiar tu caso y pensar juntos que es lo mas adecuado para tu situación.</p>
+      </div>
+    </div>
+
+    <div class="roboto text-xs font-light italic py-6 px-3 text-[#9A9A9A]">
+      <p id="priceDescription" class="block ">* Para quienes neceistan presencia básica o una landing inicial.</p>
+      <p class="opacity-100">* Los rangos son orientativos y se ajustan según la complejidad del proyecto.</p>
+    </div>
+  </div>
+
+
+  <div class="mt-10">
+    <div class="flex flex-col w-full"> 
+      <label id="detailsLabel" class="mb-[-10px]" for="detailsInput">Detalles del proyecto *</label>
+      <textarea class="text-white opacity-40 roboto non-italic text-xs resize-none bg-transparent focus:outline-none border-b-2 border-[#9A9A9A] border-opacity-50 " name="details" id="detailsInput"></textarea>
         
+    </div>
+  </div>
+  <div class="mt-12">
+    <button type="submit" class="submitBtn border-[1px] border-white border-opacity-5 bg-white bg-opacity-5 text-[#B6B6B6] px-6 py-4 rounded-xl w-full text-center">Enviar formulario
+    </button>
+  </div>
+  
 </form>
+
+
+<style is:global>
+
+  form {
+    background-image: url(/bgBlur.jpg);
+    background-size: cover;
+    
+  }
+
+   .submitBtn:hover{
+      background:linear-gradient(90deg, #ef97df46, #442f7079);
+      border: 1px solid rgba(201, 140, 197, 0.50);
+      
+    }
+  
+
+  .serviceRadio {
+    transition: opacity 0.2s ease-in-out; 
+    will-change: opacity;
+    cursor: pointer;       
+    background-color: rgba(255, 255, 255, 0.05);                  
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 0.5rem 1rem;                    
+    border-radius: 0.6rem;    
+    font-weight: 300;
+  }
+  
+  .roboto {
+    font-family: 'Roboto', sans-serif;
+  }
+
+ form {
+  font-family: 'DM Serif Display', sans-serif;
+ }
+
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    type RadioItem = {
+      radio: HTMLInputElement | null;
+      label: HTMLLabelElement | null;
+      controlsSection?: boolean;
+    };
+
+    const serviceSlugMap: Record<string, string> = {
+      '/service_1': 'radioDesign',
+      '/service_2': 'radioApp',
+      '/service_3': 'radioBranding',
+      '/service_4': 'radioContent',
+      '/service_5': 'radioUnsure',
+    };
+
+    const radioDesign = document.getElementById('radioDesign') as HTMLInputElement | null;
+    const radioDesignLabel = document.getElementById('radioDesignLabel') as HTMLLabelElement | null;
+
+    const radioApp = document.getElementById('radioApp') as HTMLInputElement | null;
+    const radioAppLabel = document.getElementById('radioAppLabel') as HTMLLabelElement | null;
+
+    const radioBranding = document.getElementById('radioBranding') as HTMLInputElement | null;
+    const radioBrandingLabel = document.getElementById('radioBrandingLabel') as HTMLLabelElement | null;
+
+    const radioContent = document.getElementById('radioContent') as HTMLInputElement | null;
+    const radioContentLabel = document.getElementById('radioContentLabel') as HTMLLabelElement | null;
+
+    const radioUnsure = document.getElementById('radioUnsure') as HTMLInputElement | null;
+    const radioUnsureLabel = document.getElementById('radioUnsureLabel') as HTMLLabelElement | null;
+
+    const nameInput = document.getElementById('nameInput') as HTMLInputElement | null;
+    const nameLabel = document.getElementById('nameLabel') as HTMLLabelElement | null;
+
+    const emailInput = document.getElementById('emailInput') as HTMLInputElement | null;
+    const emailLabel = document.getElementById('emailLabel') as HTMLLabelElement | null;
+
+    const detailsInput = document.getElementById('detailsInput') as HTMLTextAreaElement | null;
+    const detailsLabel = document.getElementById('detailsLabel') as HTMLLabelElement | null;
+
+    const priceSections: Record<string, HTMLElement | null> = {
+      radioDesign: document.getElementById('designPrices'),
+      radioApp: document.getElementById('appPrices'),
+      radioBranding: document.getElementById('brandingPrices'),
+      radioContent: document.getElementById('contentPrices'),
+      radioUnsure: document.getElementById('unsurePrices'),
+    };
+
+    const serviceRadios: RadioItem[] = [
+      { radio: radioDesign, label: radioDesignLabel, controlsSection: true },
+      { radio: radioApp, label: radioAppLabel, controlsSection: true },
+      { radio: radioBranding, label: radioBrandingLabel, controlsSection: true },
+      { radio: radioContent, label: radioContentLabel, controlsSection: true },
+      { radio: radioUnsure, label: radioUnsureLabel, controlsSection: true },
+    ];
+
+    // Collect every price radio + label so we can reuse the styling helper.
+    const collectPriceRadios = (): RadioItem[] => {
+      const entries: RadioItem[] = [];
+      Object.values(priceSections).forEach((section) => {
+        if (!section) return;
+
+        const inputs = section.querySelectorAll('input[type="radio"]') as NodeListOf<HTMLInputElement>;
+        inputs.forEach((inputEl) => {
+          inputEl.name = 'presupuesto';
+          const labelEl = section.querySelector(`label[for="${inputEl.id}"]`) as HTMLLabelElement | null;
+          entries.push({ radio: inputEl, label: labelEl });
+        });
+      });
+      return entries;
+    };
+
+    const priceRadios = collectPriceRadios();
+    const radios: RadioItem[] = [...serviceRadios, ...priceRadios];
+
+    // Style the label of whichever radio is active.
+    const radioHandler = ({ radio, label }: RadioItem) => {
+      if (!radio || !label) return;
+
+      const isActive = radio.checked;
+      label.style.background = isActive ? 'linear-gradient(90deg, #ef97df46, #442f7079)' : '';
+      // label.style.background = isActive ? '#ef97df8a' : '';
+      label.style.color = isActive ? '#DADADA' : '';
+      label.style.border = isActive ? '1px solid rgba(201, 140, 197, 0.50)' : '';
+      label.style.opacity = isActive ? '0.9' : '0.7';
+      
+    };
+
+    // Reapply the label styles for every radio so visuals stay in sync.
+    const updateAllRadios = () => {
+      radios.forEach(radioHandler);
+    };
+
+    // Clear any previously chosen price tier when the user switches service.
+    const clearPriceRadios = () => {
+      priceRadios.forEach(({ radio }) => {
+        if (radio) radio.checked = false;
+      });
+    };
+
+    // Reveal the section tied to the current service and refresh label styles.
+    const showPriceSection = (serviceId: string) => {
+      clearPriceRadios();
+      Object.entries(priceSections).forEach(([id, section]) => {
+        section?.classList.toggle('hidden', id !== serviceId);
+      });
+      updateAllRadios();
+    };
+
+    // Force a specific service radio to load as selected.
+    const setInitialService = (serviceId: string) => {
+      const serviceRadio = document.getElementById(serviceId) as HTMLInputElement | null;
+      if (!serviceRadio) return;
+
+      serviceRadio.checked = true;
+      showPriceSection(serviceId);
+      updateAllRadios();
+    };
+
+    // Decide which service should be active based on the current URL.
+    const resolveInitialServiceId = () => {
+      const path = window.location.pathname.toLowerCase();
+      const match = Object.entries(serviceSlugMap).find(([slug]) => path.includes(slug))?.[1];
+      if (match) return match;
+
+      return serviceRadios.find(({ radio }) => radio?.checked)?.radio?.id ?? 'radioDesign';
+    };
+
+    serviceRadios.forEach(({ radio }) => {
+      radio?.addEventListener('change', () => {
+        if (!radio) return;
+        showPriceSection(radio.id);
+      });
+    });
+
+    priceRadios.forEach(({ radio }) => {
+      radio?.addEventListener('change', updateAllRadios);
+    });
+
+    setInitialService(resolveInitialServiceId());
+
+    // Animate text labels so they float when inputs are focused or filled.
+    const inputAnimation = (
+      input: HTMLInputElement | HTMLTextAreaElement | null,
+      label: HTMLLabelElement | null
+    ) => {
+      if (!input || !label) return;
+
+      if (input.value.trim() !== '') {
+        label.style.transformOrigin = 'left top';
+        label.style.opacity = '100%';
+        label.style.transform = 'translateY(-15px) scale(0.8)';
+      } else {
+        label.style.transformOrigin = 'left top';
+        label.style.opacity = '100%';
+        label.style.transform = 'translateY(0px) scale(1)';
+      }
+      label.style.transition = 'all 0.2s ease';
+
+      input.addEventListener('focus', () => {
+        label.style.transformOrigin = 'left top';
+        label.style.opacity = '100%';
+        label.style.transform = 'translateY(-15px) scale(0.8)';
+      });
+
+      input.addEventListener('blur', () => {
+        if (input.value.trim() === '') {
+          label.style.transformOrigin = 'left top';
+          label.style.transform = 'translateY(0px) scale(1)';
+        }
+        label.style.color = '';
+      });
+    };
+
+    [
+      { input: nameInput, label: nameLabel },
+      { input: emailInput, label: emailLabel },
+      { input: detailsInput, label: detailsLabel },
+    ].forEach(({ input, label }) => inputAnimation(input, label));
+  });
+</script>
 

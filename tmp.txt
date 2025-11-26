@@ -14,9 +14,10 @@ import ContactForm from "../components/ContactForm.astro";
             <h1 id="sectionTitle" class="mt-3 drop-shadow-xl shadow-black text-center text-white font-bold text-xl">DISEÑO Y DESARROLLO WEB</h1>
             <button class="opacity-0"><img src={ham} alt="Menu"></button>
         </div>
+        
 
-        <div id="smoothContainer" class="flex justify-start items-start p-[10em] px-48 ">
-            <div class=" h-[200vh] z-30">
+        <div id="smoothContainer" class="flex justify-start items-start p-[8em] px-48 ">
+            <div class=" h-[200vh] z-30 mt-12">
                 <div class="scroller pt-[15em]">
                     <div id="firstScrolleable" class="font-black text-light_gray transition-all ease-in-out duration-700 snap-child">
                         <div class="text-white font-black tracking-widest text-3xl  ">
@@ -57,8 +58,8 @@ import ContactForm from "../components/ContactForm.astro";
                 </div>
             </div>
             
-            <div id="videoDiv" class="fixed right-0 mt-[-8em] transition-all ease-in-out duration-200">
-                <div data-us-project="Sg8WpYHGFTowEnfHTQxl" style="width:1080px; height: 1080px;"></div>
+            <div id="videoDiv" class="h-screen fixed right-0 mt-[-8em] transition-all ease-in-out duration-200">
+                <div data-us-project="Sg8WpYHGFTowEnfHTQxl" style="width:1100px; height: 1100px"></div>
                  
                 <!-- <video autoplay loop muted playsinline class=" w-[850px] opacity-100" src="/src/assets/video.webm" aria-label="Website development demonstration video"></video>
                 <div class="h-[4px] w-[80px] bg-white rounded-lg mx-auto mt-4 duration-75 ease-in hover:w-[40px]"></div> -->
@@ -66,7 +67,7 @@ import ContactForm from "../components/ContactForm.astro";
         </div>
         
         
-        <div class=" flex justify-between items-start w-full z-30 mt-0 pt-0 p-12 snap-child">
+        <div class=" flex justify-between items-start pt-24 w-full z-30 snap-child h-[150vh]" data-sticky-zone>
             
             <div id="fourthScrolleable" class="sticky top-[45%] left-[10%]">
                 <h1 class=" text-light_gray font-[700] text-4xl max-w-xl">
@@ -74,7 +75,7 @@ import ContactForm from "../components/ContactForm.astro";
                 </h1>
             </div> 
             
-            <div id="fifthScrolleable" class="mt-[-15em] mr-6 mb-8">
+            <div id="fifthScrolleable" class="sticky top-[5%] right-[5%] transition-all ease-in duration-100 delay-300">
                 <ContactForm/>
             </div>  
 
@@ -85,7 +86,7 @@ import ContactForm from "../components/ContactForm.astro";
 
 <style>
     .scroll-container {
-        scroll-snap-type: none;
+        scroll-snap-type: y proximity;
         overflow-y: scroll;
         height: 100vh;
         -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
@@ -99,16 +100,21 @@ import ContactForm from "../components/ContactForm.astro";
     #firstScrolleable,
     #secondScrolleable,
     #thirdScrolleable {
-        transition: opacity 0.6s ease-in-out;
+        transition: opacity 0.6s ease-in-out delay 2s ;
         will-change: opacity; /* Hint for browser optimization */
         opacity: 0;
     }
 
     #fifthScrolleable {
-        transition: opacity 0.3s ease-in;
-        will-change: opacity;
+        transition: opacity 0.45s ease, transform 0.7s ease;
+        will-change: opacity, transform;
         opacity: 0;
-        
+        transform: translate3d(110px, 0, 0); /* Start slightly off-screen */
+    }
+
+    #fifthScrolleable.is-visible {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
     }
 
     #sectionTitle {
@@ -118,9 +124,18 @@ import ContactForm from "../components/ContactForm.astro";
         transform: translateY(-100px); /* Initial state - off screen to the right */
     }
 
+    #sectionTitle.is-hidden {
+        opacity: 0;
+        transform: translateY(-80px);
+    }
+
     #videoDiv {
         transition: opacity 0.2s ease-in;
         will-change: opacity;
+    }
+
+    #videoDiv.is-dimmed {
+        opacity: 0;
     }
 
     #smoothContainer {
@@ -155,169 +170,56 @@ window.addEventListener('DOMContentLoaded', function() {
     const firstScrolleable = document.getElementById('firstScrolleable');
     const secondScrolleable = document.getElementById('secondScrolleable');
     const thirdScrolleable = document.getElementById('thirdScrolleable');
-    const fourthScrolleable = document.getElementById('fourthScrolleable');
     const fifthScrolleable = document.getElementById('fifthScrolleable');
     const sectionTitle = this.document.getElementById('sectionTitle')
     const video = document.getElementById('videoDiv');
+    const scrollContainer = document.querySelector('.scroll-container');
+    const stickyZone = document.querySelector('[data-sticky-zone]');
 
     // Early return if critical elements are missing
-    if (!video) {
-        console.warn('Video element not found');
+    if (!scrollContainer) {
+        console.warn('Scroll container not found');
         return;
     }
 
-    // Observer for first scrollable section
-    if (firstScrolleable) {
-        const observer = new IntersectionObserver((entries) => {
+    const fadingSections = [firstScrolleable, secondScrolleable, thirdScrolleable].filter(Boolean);
+
+    if (fadingSections.length) {
+        const fadeObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                // Use requestAnimationFrame for smoother updates
-                requestAnimationFrame(() => {
-                    if (entry.isIntersecting) {
-                        firstScrolleable.style.opacity = '1';
-                        if (video) video.style.opacity = '1';
-                        sectionTitle.style.transform = 'translateY(0px)';
-                    } else {
-                        firstScrolleable.style.opacity = '0';
-                    }
-                });
-            });
-        }, {
-            root: null,
-            threshold: 0.8, // Trigger slightly earlier for smoother transition
-            rootMargin: '-300px 0px 300px 0px'
-        });
-        observer.observe(firstScrolleable);
-    }
+                const isVisible = entry.isIntersecting;
+                entry.target.style.opacity = isVisible ? '1' : '0';
 
-    // Observer for second scrollable section
-    if (secondScrolleable) {
-        const observer2 = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                requestAnimationFrame(() => {
-                    if (entry.isIntersecting) {
-                        secondScrolleable.style.opacity = '1';
-                        if (video) video.style.opacity = '1';
-                    } else {
-                        secondScrolleable.style.opacity = '0';
-                    }
-                });
-            });
-        }, {
-            root: null,
-            threshold: 0.8,
-            rootMargin: '-300px 0px 300px 0px'
-        });
-        observer2.observe(secondScrolleable);
-    }
-
-    // Observer for third scrollable section
-    if (thirdScrolleable) {
-        const observer3 = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                requestAnimationFrame(() => {
-                    if (entry.isIntersecting) {
-                        thirdScrolleable.style.opacity = '1';
-                        if (video) video.style.opacity = '1';
-                    } else {
-                        thirdScrolleable.style.opacity = '0';
-                    }
-                });
-            });
-        }, {
-            root: null,
-            threshold: 0.8,
-            rootMargin: '-200px 0px 0px 0px'
-        });
-        observer3.observe(thirdScrolleable);
-    }
-
-    // Get the scroll container
-    const scrollContainer = document.querySelector('.scroll-container');
-    
-    // Function to check if fourthScrolleable is at its sticky position (45% from top)
-    function isFourthScrolleableSticky() {
-        if (!fourthScrolleable || !scrollContainer) return false;
-        
-        const fourthRect = fourthScrolleable.getBoundingClientRect();
-        const containerRect = scrollContainer.getBoundingClientRect();
-        const viewportHeight = containerRect.height;
-        
-        // Sticky position is 45% from top of viewport
-        const stickyTopPosition = containerRect.top + (viewportHeight * 0.45);
-        
-        // Check if fourthScrolleable's top is at or near its sticky position (within 20px tolerance)
-        const distanceFromSticky = Math.abs(fourthRect.top - stickyTopPosition);
-        const tolerance = 30; // pixels of tolerance
-        
-        // Also check if it's visible
-        const isVisible = fourthRect.top >= containerRect.top && 
-                         fourthRect.bottom <= containerRect.bottom;
-        
-        return distanceFromSticky <= tolerance && isVisible;
-    }
-
-    // Function to show contact form
-    function showContactForm() {
-        if (fifthScrolleable) {
-            requestAnimationFrame(() => {
-                fifthScrolleable.style.opacity = '1';
-               
-            });
-        }
-    }
-
-    // Function to hide contact form
-    function hideContactForm() {
-        if (fifthScrolleable) {
-            requestAnimationFrame(() => {
-                fifthScrolleable.style.opacity = '0';
-                
-            });
-        }
-    }
-
-    // Observer for fourth scrollable section - hides video when visible
-    if (fourthScrolleable) {
-        const observer4 = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                requestAnimationFrame(() => {
-                    if (entry.isIntersecting) {
-                        if (video) video.style.opacity = '0';
-                        sectionTitle.style.transform = 'translateY(-100px)';
-                        sectionTitle.style.opacity = '0';
-                    } else {
-                        if (video) video.style.opacity = '1';
-                        sectionTitle.style.transform = 'translateY(0px)';
-                        sectionTitle.style.opacity = '1';
-                    }
-                });
+                if (entry.target === firstScrolleable && sectionTitle) {
+                    sectionTitle.style.opacity = isVisible ? '1' : '0';
+                    sectionTitle.style.transform = isVisible ? 'translateY(0)' : 'translateY(-100px)';
+                }
             });
         }, {
             root: scrollContainer,
-            threshold: 0.5,
-            rootMargin: '0px'
+            threshold: 1,
+            rootMargin: '-12% 0px -8% 0px'
         });
-        observer4.observe(fourthScrolleable);
+
+        fadingSections.forEach(section => fadeObserver.observe(section));
     }
 
-    // Scroll event listener to check when fourthScrolleable reaches sticky position
-    let scrollTicking = false;
-    if (scrollContainer && fourthScrolleable) {
-        scrollContainer.addEventListener('scroll', function() {
-            if (!scrollTicking) {
-                requestAnimationFrame(() => {
-                    // Check if fourthScrolleable is at its sticky position (45% from top)
-                    if (isFourthScrolleableSticky()) {
-                        showContactForm();
-                    } else {
-                        hideContactForm();
-                    }
-                    
-                    scrollTicking = false;
-                });
-                scrollTicking = true;
-            }
+    if (stickyZone && fifthScrolleable) {
+        const stickyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const isStickyVisible = entry.isIntersecting;
+
+                fifthScrolleable.classList.toggle('is-visible', isStickyVisible);
+                sectionTitle?.classList.toggle('is-hidden', isStickyVisible);
+                video?.classList.toggle('is-dimmed', isStickyVisible);
+            });
+        }, {
+            root: scrollContainer,
+            threshold: 0.25,
+            rootMargin: '-5% 0px -5% 0px'
         });
+
+        stickyObserver.observe(stickyZone);
     }
 
     const removeCredit = () => {
