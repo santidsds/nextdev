@@ -2,7 +2,7 @@
 import FormInput from "./subcomponents/FormInput.astro"
 ---
 
-<form class="w-[45vw] h-[82vh] text-md  shadow-[0px_0px_20px_2px] drop-shadow-2xl shadow-[#b28bae36] border-2 border-[#2020207e] rounded-3xl p-24 text-[#C7C7C7] italic"
+<form class="w-[45vw] h-[82vh] text-md shadow-[0px_0px_20px_2px] drop-shadow-2xl shadow-[#654c6336] border-2 border-[#2020207e] rounded-3xl p-24 text-[#C7C7C7] italic"
 action="https://formspree.io/f/xkgplzdg"
 method="POST">
 
@@ -22,26 +22,34 @@ method="POST">
     <p class="">Servicio *</p>
     
     <div class="mt-6 roboto not-italic text-[11px] flex flex-wrap gap-y-7">
-
-      <FormInput service="Diseño y desarrollo web" idLabel="radioDesignLabel" classLabel="serviceRadio" forLabel="radioDesign" idInput="radioDesign" valueInput="Diseño y desarrollo web" />
-      <FormInput service="Aplicación web" idLabel="radioAppLabel" classLabel="serviceRadio" forLabel="radioApp" idInput="radioApp" valueInput="Aplicacion web" />
+      <FormInput service="Diseno y desarrollo web" idLabel="radioDesignLabel" classLabel="serviceRadio" forLabel="radioDesign" idInput="radioDesign" valueInput="Diseno y desarrollo web" />
+      <FormInput service="Rediseno de sitio" idLabel="radioRedesignLabel" classLabel="serviceRadio" forLabel="radioRedesign" idInput="radioRedesign" valueInput="Rediseno de sitio" />
+      <FormInput service="Aplicacion web" idLabel="radioAppLabel" classLabel="serviceRadio" forLabel="radioApp" idInput="radioApp" valueInput="Aplicacion web" />
       <FormInput service="Identidad visual y branding" idLabel="radioBrandingLabel" classLabel="serviceRadio" forLabel="radioBranding" idInput="radioBranding" valueInput="Identidad visual y branding" />
       <FormInput service="Contenido visual para redes" idLabel="radioContentLabel" classLabel="serviceRadio" forLabel="radioContent" idInput="radioContent" valueInput="Contenido visual para redes" />
       <FormInput service="No estoy seguro/a" idLabel="radioUnsureLabel" classLabel="serviceRadio" forLabel="radioUnsure" idInput="radioUnsure" valueInput="No estoy seguro/a" />
-
     </div>
   </div>
 
-  <div class="">
+  <div>
     <div id="designPrices" class="mt-14">
       <p>Presupuesto para el proyecto *</p>
 
       <div class="mt-6 roboto not-italic text-[11px] flex flex-wrap gap-y-7">
         <FormInput service="Menos de UYU 8000" idLabel="designPriceLabel_1" classLabel="serviceRadio" forLabel="designPriceInput_1" idInput="designPriceInput_1" valueInput="Menos de UYU 8000" />
-        <FormInput service="UYU 8.000 - UYU 15.000" idLabel="designPriceLabel_2" classLabel="serviceRadio" forLabel="designPriceInput_2" idInput="designPriceInput_2" valueInput="UYU 8000 - UYU 15000" />
-        <FormInput service="UYU 15.000 - UYU 25.000" idLabel="designPriceLabel_3" classLabel="serviceRadio" forLabel="designPriceInput_3" idInput="designPriceInput_3" valueInput="UYU 15000 - UYU 25000" />
-        <FormInput service="Más de UYU 25.000" idLabel="designPriceLabel_4" classLabel="serviceRadio" forLabel="designPriceInput_4" idInput="designPriceInput_4" valueInput="Mas de 25.000" />
+        <FormInput service="UYU 8000 - UYU 15000" idLabel="designPriceLabel_2" classLabel="serviceRadio" forLabel="designPriceInput_2" idInput="designPriceInput_2" valueInput="UYU 8000 - UYU 15000" />
+        <FormInput service="UYU 15000 - UYU 25000" idLabel="designPriceLabel_3" classLabel="serviceRadio" forLabel="designPriceInput_3" idInput="designPriceInput_3" valueInput="UYU 15000 - UYU 25000" />
+        <FormInput service="Mas de UYU 25000" idLabel="designPriceLabel_4" classLabel="serviceRadio" forLabel="designPriceInput_4" idInput="designPriceInput_4" valueInput="Mas de 25000" />
+      </div>
+    </div>
 
+    <div id="redesignPrices" class="mt-14 hidden">
+      <p>Presupuesto para el proyecto *</p>
+
+      <div class="mt-6 roboto not-italic text-[11px] flex flex-wrap gap-y-7">
+        <FormInput service="Menos de UYU 6000" idLabel="redesignPriceLabel_1" classLabel="serviceRadio" forLabel="redesignPriceInput_1" idInput="redesignPriceInput_1" valueInput="Menos de UYU 6000" />
+        <FormInput service="UYU 6000 - UYU 12000" idLabel="redesignPriceLabel_2" classLabel="serviceRadio" forLabel="redesignPriceInput_2" idInput="redesignPriceInput_2" valueInput="UYU 6000 - UYU 12000" />
+        <FormInput service="Mas de UYU 12000" idLabel="redesignPriceLabel_3" classLabel="serviceRadio" forLabel="redesignPriceInput_3" idInput="redesignPriceInput_3" valueInput="Mas de UYU 12000" />
       </div>
     </div>
 
@@ -50,8 +58,8 @@ method="POST">
 
       <div class="mt-6 roboto not-italic text-[11px] flex flex-wrap gap-y-7">
         <FormInput service="Menos de UYU 6000" idLabel="appPriceLabel_1" classLabel="serviceRadio" forLabel="appPriceInput_1" idInput="appPriceInput_1" valueInput="Menos de UYU 8000" />
-        <FormInput service="UYU 6.000 - UYU 12000" idLabel="appPriceLabel_2" classLabel="serviceRadio" forLabel="appPriceInput_2" idInput="appPriceInput_2" valueInput="UYU 8000 - UYU 15000" />
-        <FormInput service="Más de UYU 12000" idLabel="appPriceLabel_3" classLabel="serviceRadio" forLabel="appPriceInput_3" idInput="appPriceInput_3" valueInput="Mas de UYU 12000" />
+        <FormInput service="UYU 6000 - UYU 12000" idLabel="appPriceLabel_2" classLabel="serviceRadio" forLabel="appPriceInput_2" idInput="appPriceInput_2" valueInput="UYU 8000 - UYU 15000" />
+        <FormInput service="Mas de UYU 12000" idLabel="appPriceLabel_3" classLabel="serviceRadio" forLabel="appPriceInput_3" idInput="appPriceInput_3" valueInput="Mas de UYU 12000" />
       </div>
     </div>
 
@@ -78,13 +86,13 @@ method="POST">
     <div id="unsurePrices" class="mt-14 hidden">
       <p class="">Presupuesto para el proyecto *</p>
       <div class="roboto text-xs text-[#9A9A9A] py-3 px-3">
-        <p class="">No te preocupes, vamos a estudiar tu caso y pensar juntos que es lo mas adecuado para tu situación.</p>
+        <p class="">No te preocupes, vamos a estudiar tu caso y pensar juntos que es lo mas adecuado para tu situacion.</p>
       </div>
     </div>
 
     <div class="roboto text-xs font-light italic py-6 px-3 text-[#9A9A9A]">
-      <p id="priceDescription" class="block ">* Para quienes neceistan presencia básica o una landing inicial.</p>
-      <p class="opacity-100">* Los rangos son orientativos y se ajustan según la complejidad del proyecto.</p>
+      <p id="priceDescription" class="block ">* Para quienes necesitan presencia basica o una landing inicial.</p>
+      <p class="opacity-100">* Los rangos son orientativos y se ajustan segun la complejidad del proyecto.</p>
     </div>
   </div>
 
@@ -93,7 +101,6 @@ method="POST">
     <div class="flex flex-col w-full"> 
       <label id="detailsLabel" class="mb-[-10px]" for="detailsInput">Detalles del proyecto *</label>
       <textarea class="text-white opacity-40 roboto non-italic text-xs resize-none bg-transparent focus:outline-none border-b-2 border-[#9A9A9A] border-opacity-50 " name="details" id="detailsInput"></textarea>
-        
     </div>
   </div>
   <div class="mt-12">
@@ -109,14 +116,12 @@ method="POST">
   form {
     background-image: url(/bgBlur.jpg);
     background-size: cover;
-    
   }
 
-   .submitBtn:hover{
-      background:linear-gradient(90deg, #ef97df46, #442f7079);
-      border: 1px solid rgba(201, 140, 197, 0.50);
-      
-    }
+  .submitBtn:hover{
+    background:linear-gradient(90deg, #ef97df46, #442f7079);
+    border: 1px solid rgba(201, 140, 197, 0.50);
+  }
   
 
   .serviceRadio {
@@ -149,15 +154,19 @@ method="POST">
     };
 
     const serviceSlugMap: Record<string, string> = {
-      '/service_1': 'radioDesign',
-      '/service_2': 'radioApp',
-      '/service_3': 'radioBranding',
-      '/service_4': 'radioContent',
-      '/service_5': 'radioUnsure',
+      '/service_design': 'radioDesign',
+      '/service_redesign': 'radioRedesign',
+      '/service_app': 'radioApp',
+      '/service_branding': 'radioBranding',
+      '/service_content': 'radioContent',
+      '/contact': 'radioUnsure',
     };
 
     const radioDesign = document.getElementById('radioDesign') as HTMLInputElement | null;
     const radioDesignLabel = document.getElementById('radioDesignLabel') as HTMLLabelElement | null;
+
+    const radioRedesign = document.getElementById('radioRedesign') as HTMLInputElement | null;
+    const radioRedesignLabel = document.getElementById('radioRedesignLabel') as HTMLLabelElement | null;
 
     const radioApp = document.getElementById('radioApp') as HTMLInputElement | null;
     const radioAppLabel = document.getElementById('radioAppLabel') as HTMLLabelElement | null;
@@ -182,6 +191,7 @@ method="POST">
 
     const priceSections: Record<string, HTMLElement | null> = {
       radioDesign: document.getElementById('designPrices'),
+      radioRedesign: document.getElementById('redesignPrices'),
       radioApp: document.getElementById('appPrices'),
       radioBranding: document.getElementById('brandingPrices'),
       radioContent: document.getElementById('contentPrices'),
@@ -190,6 +200,7 @@ method="POST">
 
     const serviceRadios: RadioItem[] = [
       { radio: radioDesign, label: radioDesignLabel, controlsSection: true },
+      { radio: radioRedesign, label: radioRedesignLabel, controlsSection: true },
       { radio: radioApp, label: radioAppLabel, controlsSection: true },
       { radio: radioBranding, label: radioBrandingLabel, controlsSection: true },
       { radio: radioContent, label: radioContentLabel, controlsSection: true },
@@ -221,11 +232,9 @@ method="POST">
 
       const isActive = radio.checked;
       label.style.background = isActive ? 'linear-gradient(90deg, #ef97df46, #442f7079)' : '';
-      // label.style.background = isActive ? '#ef97df8a' : '';
       label.style.color = isActive ? '#DADADA' : '';
       label.style.border = isActive ? '1px solid rgba(201, 140, 197, 0.50)' : '';
       label.style.opacity = isActive ? '0.9' : '0.7';
-      
     };
 
     // Reapply the label styles for every radio so visuals stay in sync.
@@ -321,4 +330,3 @@ method="POST">
     ].forEach(({ input, label }) => inputAnimation(input, label));
   });
 </script>
-

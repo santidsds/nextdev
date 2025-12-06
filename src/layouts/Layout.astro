@@ -29,7 +29,6 @@ const { title } = Astro.props;
 	html, body {
 		font-family: 'Poppins', sans-serif;
 		scroll-behavior: smooth;
-		scroll-snap-type: y mandatory;
 		background-image: url('/Frame11T.webp');
 		background-size: cover;
 		background-position:center;
@@ -74,6 +73,24 @@ const { title } = Astro.props;
 	.roboto {
     font-family: 'Roboto', sans-serif;
   	
+	}
+
+	/* Shared dot pager styles for service pages */
+	#sectionDots .dot {
+		width: 10px;
+		height: 10px;
+		border-radius: 9999px;
+		background: rgba(255,255,255,0.25);
+		border: 1px solid rgba(255, 255, 255, 0.088);
+		transition: background 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+		opacity: 0.7;
+		cursor: pointer;
+	}
+
+	#sectionDots .dot.active {
+		background: linear-gradient(120deg, #7d3771, #8f73cb);
+		opacity: 1;
+		transform: scale(1.15);
 	}
 	
 </style>

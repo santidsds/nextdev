@@ -1,0 +1,321 @@
+---
+import Layout from "../layouts/Layout.astro";
+import backBtn from "../assets/btn_back.svg?url"
+import ham from "../assets/btn_ham.svg?url"
+import mockup from "/public/mockup.png?url"
+import ContactForm from "../components/ContactForm.astro";
+
+---
+
+<Layout title="Renovacion de sitio web" >
+
+	<div class="h-screen w-screen bg-secondary_bg bg-cover overflow-auto overflow-x-hidden scroll-container" >
+        <div class="w-full flex justify-between gap-12 px-44 mt-4 fixed opacity-90 z-50">
+            <button class=""><a class="p-3" href="/#services"><img src={backBtn} alt="Back to services"></a></button>
+            <h1 id="sectionTitle" class="mt-5 drop-shadow-xl shadow-black text-center text-purple-200 font-bold tracking-widest text-xl">RENOVACION DE SITIO WEB</h1>
+            <button class="opacity-0"><img src={ham} alt="Menu"></button>
+        </div>
+
+        <div id="sectionDots" class="fixed left-6 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-50">
+            <button class="dot active" data-target="firstScrolleable" aria-label="Ir a seccion 1"></button>
+            <button class="dot" data-target="secondScrolleable" aria-label="Ir a seccion 2"></button>
+            <button class="dot" data-target="thirdScrolleable" aria-label="Ir a seccion 3"></button>
+        </div>
+
+        <div id="smoothContainer" class="flex flex-col items-center">
+            <div class="h-screen flex justify-center items-center px-40 snap-child">
+                <div id="firstScrolleable" class="font-black text-light_gray flex justify-center items-center gap-40 opacity-0">
+                    <div class="text-white font-black  text-3xl  ">
+                        <h1 class="multicolor tracking-widest">DALE PRESTIGIO A TU MARCA</h1>
+                        <div class="opacity-80">
+                            <p class="font-bold text-xl max-w-2xl mt-[1em] text-white ">Que da mas <span class="multicolor">confianza</span> que una web <span class="multicolor">profesional?</span></p>
+                            <p class="font-bold text-xl max-w-2xl mt-[1em] text-white ">Rediseñamos tu sitio para reflejar <span class="multicolor">tu marca</span> y tu <span class="multicolor">vision.</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-[5em] flex-col justify-center">
+                        <img class="w-[750px] duration-300 transition-all ease-in-out cursor-pointer" src={mockup} alt="">
+                        <p class="text-white text-center mt-[2em] text-xs font-[400]">Arrastra para ver el cambio</p>
+                    </div>
+                
+                </div> 
+            </div>
+
+            <div id="secondScrolleable" class="h-screen flex justify-center items-center w-screen mt-6 mb-12 opacity-0 snap-child">
+                <div class=" flex flex-col items-center justify-center">
+					<div class="text-light_gray flex font-bold text-3xl text-center mb-20">
+						<h1 class="max-w-4xl"><span class="text-white">Transforma</span> tu presencia y posicionate como una empresa de <span class="text-white">primer nivel</span></h1>
+					</div>  
+                    <div class=" flex">
+                        <div class=" flex-col justify-center">
+							<img class="w-[600px] duration-300 transition-all ease-in-out cursor-pointer" src={mockup} alt="">
+							<p class="text-white text-center mt-[2em] text-xs font-[600]">Antes</p>
+						</div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div id="thirdScrolleable" class="h-screen flex justify-center items-center w-screen mt-10 mb-12 opacity-0 snap-child">
+                <div class="text-center max-w-3xl px-8">
+                    <h2 class="text-white font-bold text-3xl mb-4">Proceso de rediseño guiado</h2>
+                    <p class="text-light_gray text-lg">Auditamos tu sitio actual, definimos mejoras de UX/UI y lanzamos un look & feel moderno sin perder tu identidad.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class=" flex justify-between items-start w-full z-30 pt-[20em] snap-child ">
+            <div id="fourthScrolleable" class="sticky top-[45%] left-[10%]">
+                <h1 class=" text-light_gray font-[700] text-4xl max-w-xl">
+                    Obtene tu presupuesto<span class="text-white"> personalizado</span> y un prototipo de diseño <span class="text-white">sin costo</span>
+                </h1>
+            </div> 
+            
+            <div id="fifthScrolleable" class="mt-[-15em] mr-20 mb-20">
+                <ContactForm/>
+            </div>  
+
+        </div>
+
+	</div>
+
+</Layout>
+
+<style>
+    .scroll-container {
+        scroll-snap-type: y proximity;
+        overflow-y: scroll;
+        height: 100vh;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .snap-child {
+        scroll-snap-align: center;
+    }
+
+    #firstScrolleable,
+    #secondScrolleable,
+    #thirdScrolleable {
+        transition: opacity 0.3s ease;
+        will-change: opacity;
+        opacity: 0;
+    }
+
+    #fifthScrolleable {
+        transition: opacity 0.3s ease;
+        will-change: opacity;
+        opacity: 0;
+        
+    }
+
+    #sectionTitle {
+        transition: opacity 0.5s ease-in-out, transform 0.4s ease-in-out;
+        will-change: opacity, transform;
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    #smoothContainer {
+        scroll-behavior: smooth;
+    }
+
+
+    @media (prefers-reduced-motion: reduce) {
+        .scroll-container {
+            scroll-behavior: auto;
+        }
+        
+        #firstScrolleable,
+        #secondScrolleable,
+        #thirdScrolleable,
+        #fourthScrolleable,
+        #fifthScrolleable {
+            transition: none;
+        }
+    }
+</style>
+
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+    const firstScrolleable = document.getElementById('firstScrolleable');
+    const secondScrolleable = document.getElementById('secondScrolleable');
+    const thirdScrolleable = document.getElementById('thirdScrolleable');
+    const fourthScrolleable = document.getElementById('fourthScrolleable');
+    const fifthScrolleable = document.getElementById('fifthScrolleable');
+    const sectionTitle = this.document.getElementById('sectionTitle')
+    const scrollContainer = document.querySelector('.scroll-container');
+    const dots = Array.from(document.querySelectorAll('#sectionDots .dot')) as HTMLButtonElement[];
+
+    // Observer for first scrollable section
+    if (firstScrolleable) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                requestAnimationFrame(() => {
+                    if (entry.isIntersecting) {
+                        firstScrolleable.style.opacity = '1';
+                        sectionTitle.style.transform = 'translateY(0px)';
+                    } else {
+                        firstScrolleable.style.opacity = '0';
+                    }
+                });
+            });
+        }, {
+            root: scrollContainer || null,
+            threshold: 0.4,
+            rootMargin: '-5% 0px -5% 0px'
+        });
+        observer.observe(firstScrolleable);
+    }
+
+    if (secondScrolleable) {
+        const observer2 = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                requestAnimationFrame(() => {
+                    if (entry.isIntersecting) {
+                        secondScrolleable.style.opacity = '1';
+                    } else {
+                        secondScrolleable.style.opacity = '0';
+                    }
+                });
+            });
+        }, {
+            root: scrollContainer || null,
+            threshold: 0.4,
+            rootMargin: '-5% 0px -5% 0px'
+        });
+        observer2.observe(secondScrolleable);
+    }
+
+    if (thirdScrolleable) {
+        const observer3 = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                requestAnimationFrame(() => {
+                    if (entry.isIntersecting) {
+                        thirdScrolleable.style.opacity = '1';
+                    } else {
+                        thirdScrolleable.style.opacity = '0';
+                    }
+                });
+            });
+        }, {
+            root: scrollContainer || null,
+            threshold: 0.4,
+            rootMargin: '-5% 0px -5% 0px'
+        });
+        observer3.observe(thirdScrolleable);
+    }
+
+    // Dot navigation sync
+    const sectionMap = {
+        firstScrolleable,
+        secondScrolleable,
+        thirdScrolleable,
+    };
+
+    const setActiveDot = (id: string | null) => {
+        if (!id) return;
+        dots.forEach((dot) => {
+            const target = dot.dataset?.target;
+            dot.classList.toggle('active', target === id);
+        });
+    };
+
+    dots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+            const targetId = dot.dataset?.target;
+            const el = targetId ? sectionMap[targetId] : null;
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    });
+
+    const updateActiveDot = () => {
+        const containerRect = scrollContainer?.getBoundingClientRect() || { top: 0, height: window.innerHeight };
+        const viewportCenter = containerRect.height / 2;
+        let closestId = null;
+        let closestDist = Infinity;
+
+        Object.values(sectionMap).forEach((el) => {
+            if (!el) return;
+            const rect = el.getBoundingClientRect();
+            const center = rect.top - containerRect.top + rect.height / 2;
+            const dist = Math.abs(center - viewportCenter);
+            if (dist < closestDist) {
+                closestDist = dist;
+                closestId = el.id;
+            }
+        });
+
+        if (closestId) setActiveDot(closestId);
+    };
+
+    const handleDotScroll = () => {
+        requestAnimationFrame(updateActiveDot);
+    };
+
+    if (scrollContainer) {
+        scrollContainer.addEventListener('scroll', handleDotScroll, { passive: true });
+        updateActiveDot();
+    } else {
+        window.addEventListener('scroll', handleDotScroll, { passive: true });
+        updateActiveDot();
+    }
+
+    // Function to check if fourthScrolleable is at its sticky position (45% from top)
+    function isFourthScrolleableSticky() {
+        if (!fourthScrolleable || !scrollContainer) return false;
+        
+        const fourthRect = fourthScrolleable.getBoundingClientRect();
+        const containerRect = scrollContainer.getBoundingClientRect();
+        const viewportHeight = containerRect.height;
+        
+        const stickyTopPosition = containerRect.top + (viewportHeight * 0.45);
+        const distanceFromSticky = Math.abs(fourthRect.top - stickyTopPosition);
+        const tolerance = 30;
+        const isVisible = fourthRect.top >= containerRect.top && 
+                         fourthRect.bottom <= containerRect.bottom;
+        
+        return distanceFromSticky <= tolerance && isVisible;
+    }
+
+    // Function to show contact form
+    function showContactForm() {
+        if (fifthScrolleable) {
+            requestAnimationFrame(() => {
+                fifthScrolleable.style.opacity = '1';
+               
+            });
+        }
+    }
+
+    // Function to hide contact form
+    function hideContactForm() {
+        if (fifthScrolleable) {
+            requestAnimationFrame(() => {
+                fifthScrolleable.style.opacity = '0';
+                
+            });
+        }
+    }
+
+    // Scroll event listener to check when fourthScrolleable reaches sticky position
+    let scrollTicking = false;
+    if (scrollContainer && fourthScrolleable) {
+        scrollContainer.addEventListener('scroll', function() {
+            if (!scrollTicking) {
+                requestAnimationFrame(() => {
+                    if (isFourthScrolleableSticky()) {
+                        showContactForm();
+                    } else {
+                        hideContactForm();
+                    }
+                    
+                    scrollTicking = false;
+                });
+                scrollTicking = true;
+            }
+        });
+    }
+}); 
+
+
+</script>

@@ -1,0 +1,378 @@
+---
+import Layout from "../layouts/Layout.astro";
+import backBtn from "../assets/btn_back.svg?url"
+import ham from "../assets/btn_ham.svg?url"
+import ContactForm from "../components/ContactForm.astro";
+
+---
+
+<Layout title="Aplicaciones web personalizadas" >
+
+	<div class="h-screen w-screen bg-secondary_bg bg-cover overflow-auto overflow-x-hidden scroll-container" >
+        <div class="w-full flex sm:justify-between justify-center sm:px-48 px-6  mt-4 fixed opacity-90 z-50">
+            <button class=""><a class="p-3" href="/#services"><img src={backBtn} alt="Back to services"></a></button>
+            <h1 id="sectionTitle" class="mt-4 drop-shadow-xl shadow-black text-center text-purple-200 font-bold sm:text-xl text-md tracking-widest">APLICACIONES WEB PERSONALIZADAS</h1>
+            <button class="opacity-0"><img src={ham} alt="Menu"></button>
+        </div>
+
+        <div id="sectionDots" class="fixed sm:left-6 left-[49%] -translate-x-1/2 top-1/2 -translate-y-1/2 flex sm:flex-col gap-3 z-50">
+            <button class="dot active" data-target="firstScrolleable" aria-label="Ir a seccion 1"></button>
+            <button class="dot" data-target="secondScrolleable" aria-label="Ir a seccion 2"></button>
+            <button class="dot" data-target="thirdScrolleable" aria-label="Ir a seccion 3"></button>
+        </div>
+
+        <div id="smoothContainer" class="flex sm:justify-start justify-center items-start sm:pt-[10em] 2xl:px-48 lg:px-32 px-12 sm:text-auto">
+            <div class=" h-[200vh] z-30">
+                <div class="scroller 2xl:sm:pt-[15em] lg:pt-[12em] sm:pt-[25em] pt-[30em]">
+                    <div id="firstScrolleable" class="font-black text-light_gray snap-child">
+                        <div class="text-white font-black tracking-widest 2xl:text-3xl text-2xl   ">
+                            <h1 class="multicolor">APLICACIONES A MEDIDA</h1>
+                        
+                        </div>
+                        <div class="opacity-80">
+                            <p class="font-semibold 2xl:text-xl lg:text-lg text-md 2xl:max-w-2xl lg:max-w-lg max-w-2xl mt-[1em] text-white ">Construimos apps web personalizadas que se adaptan a tus flujos y a tus usuarios.</p>
+                            <p class="font-semibold 2xl:text-xl lg:text-lg text-md 2xl:max-w-2xl lg:max-w-lg max-w-2xl mt-[1em] text-white ">Integraciones, dashboards y experiencias interactivas listas para escalar.</p>
+                        </div>
+                    
+                    </div> 
+                    <div id="secondScrolleable" class="font-black text-light_gray sm:mt-80 mt-60 snap-children ">
+                        <div class="text-white font-black tracking-widest 2xl:text-3xl text-2xl  ">
+                            <h1 class="multicolor">PERFORMANCE Y SEGURIDAD</h1>
+                        
+                        </div>
+                        <div class="opacity-80">
+                            <p class="font-semibold 2xl:text-xl lg:text-lg text-md 2xl:max-w-2xl lg:max-w-lg max-w-2xl mt-[1em] text-white ">Optimizamos tiempos de carga, accesibilidad y seguridad para que tu app responda siempre.</p>
+                            <p class="font-semibold 2xl:text-xl lg:text-lg text-md 2xl:max-w-2xl lg:max-w-lg max-w-2xl mt-[1em] text-white ">Arquitectura moderna, API-first y buenas prácticas desde el primer sprint.</p>
+                        </div>
+                    
+                    </div> 
+                    <div id="thirdScrolleable" class=" font-black text-light_gray mt-80 snap-children">
+                        <div class="text-white font-black tracking-widest 2xl:text-3xl text-2xl  ">
+                            <h1 class="multicolor">SOPORTE Y EVOLUCIÓN</h1>
+                        
+                        </div>
+                        <div class="opacity-80">
+                            <p class="font-semibold 2xl:text-xl lg:text-lg text-md 2xl:max-w-2xl lg:max-w-lg max-w-2xl mt-[1em] text-white ">Mantenemos y mejoramos tu app con nuevas features y optimizaciones continuas.</p>
+                            <p class="font-semibold 2xl:text-xl lg:text-lg text-md 2xl:max-w-2xl lg:max-w-lg max-w-2xl mt-[1em] text-white ">Escalamos contigo a medida que tu negocio crece.</p>
+                        </div>
+                    
+                    </div> 
+                </div>
+            </div>
+            
+            <div id="videoDiv" class="fixed sm:right-24 sm:top-auto top-20 transition-all ease-in-out duration-200">
+                <div class="mt-[4em] flex-col justify-center">
+                    <img class="2xl:w-[800px] sm:w-[600px] w-[300px] duration-300 transition-all ease-in-out cursor-pointer" src=/mockup.png alt="">
+                    <p class="text-purple-200 text-center mt-6 text-xs font-medium hover:underline cursor-pointer">Explorar caso de estudio</p>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class=" sm:flex-row flex flex-col sm:justify-between sm:items-start justify-center items-center w-full z-30 sm:pt-0 pt-60 p-6 snap-children ">
+            
+            <div id="fourthScrolleable" class="sticky sm:top-[45%] top-[10%] sm:left-[10%]">
+                <h1 class=" text-light_gray font-[700] sm:text-4xl text-2xl sm:max-w-xl ">
+                    Obtene tu presupuesto<span class="text-white"> personalizado</span> y un prototipo de app <span class="text-white">sin costo</span>
+                </h1>
+            </div> 
+            
+            <div id="fifthScrolleable" class=" mt-[-15em] mr-20 mb-20">
+                <ContactForm/>
+            </div>  
+        </div>
+	</div>
+</Layout>
+
+<style>
+    .scroll-container {
+        scroll-snap-type: y proximity;
+        overflow-y: scroll;
+        height: 100vh;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .snap-children {
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+    }
+    
+    @media (max-width: 640px) {
+    .snap-children {
+        scroll-snap-align: none;
+        scroll-snap-stop: normal;
+    }
+    }
+
+    #firstScrolleable,
+    #secondScrolleable,
+    #thirdScrolleable {
+        transition: opacity 0.7s ease;
+        will-change: opacity; /* Hint for browser optimization */
+        opacity: 0;
+    }
+
+    #fifthScrolleable {
+        transition: opacity 0.5s ease;
+        will-change: opacity;
+        opacity: 0;
+        
+    }
+
+    #sectionTitle {
+        transition: opacity 0.5s ease-in-out, transform 0.4s ease-in-out;
+        will-change: opacity, transform;
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    #videoDiv {
+        transition: opacity 0.2s ease-in;
+        will-change: opacity;
+    }
+
+    #smoothContainer {
+        scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .scroll-container {
+            scroll-behavior: auto;
+        }
+        
+        #firstScrolleable,
+        #secondScrolleable,
+        #thirdScrolleable,
+        #fourthScrolleable,
+        #fifthScrolleable,
+        #videoDiv {
+            transition: none;
+        }
+    }
+</style>
+
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+    const firstScrolleable = document.getElementById('firstScrolleable');
+    const secondScrolleable = document.getElementById('secondScrolleable');
+    const thirdScrolleable = document.getElementById('thirdScrolleable');
+    const fourthScrolleable = document.getElementById('fourthScrolleable');
+    const fifthScrolleable = document.getElementById('fifthScrolleable');
+    const sectionTitle = this.document.getElementById('sectionTitle')
+    const video = document.getElementById('videoDiv');
+    const scrollContainer = document.querySelector('.scroll-container');
+    const dots = Array.from(document.querySelectorAll('#sectionDots .dot')) as HTMLButtonElement[];
+    const isMobile = window.matchMedia('(max-width: 640px)').matches;
+
+    if (!video) {
+        console.warn('Video element not found');
+        return;
+    }
+
+    if (isMobile) {                              
+        const sections = [firstScrolleable, secondScrolleable, thirdScrolleable].filter(
+            (el): el is HTMLElement => Boolean(el)
+        );
+        const updateMobileOpacity = () => {
+            const heroRect = video.getBoundingClientRect();
+            const heroBottom = heroRect.bottom;
+            sections.forEach((el) => {
+                const rect = el.getBoundingClientRect();
+                const overlapsHero = rect.top < heroBottom;
+                el.style.opacity = overlapsHero ? '0' : '1';
+            });
+        };
+
+        const handleMobileScroll = () => {
+            requestAnimationFrame(updateMobileOpacity);
+        };
+
+        if (scrollContainer) {
+            scrollContainer.addEventListener('scroll', handleMobileScroll, { passive: true });
+        } else {
+            window.addEventListener('scroll', handleMobileScroll, { passive: true });
+        }
+        updateMobileOpacity();
+    } else {
+        const observerOptions = { root: scrollContainer || null, threshold: 0.9, rootMargin: '-20% 0px -20% 0px' };
+
+        if (firstScrolleable) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    requestAnimationFrame(() => {
+                        if (entry.isIntersecting) {
+                            firstScrolleable.style.opacity = '1';
+                            video.style.opacity = '1';
+                            sectionTitle.style.transform = 'translateY(0px)';
+                        } else {
+                            firstScrolleable.style.opacity = '0';
+                        }
+                    });
+                });
+            }, observerOptions);
+            observer.observe(firstScrolleable);
+        }
+
+        if (secondScrolleable) {
+            const observer2 = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    requestAnimationFrame(() => {
+                        if (entry.isIntersecting) {
+                            secondScrolleable.style.opacity = '1';
+                            video.style.opacity = '1';
+                        } else {
+                            secondScrolleable.style.opacity = '0';
+                        }
+                    });
+                });
+            }, observerOptions);
+            observer2.observe(secondScrolleable);
+        }
+
+        if (thirdScrolleable) {
+            const observer3 = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    requestAnimationFrame(() => {
+                        if (entry.isIntersecting) {
+                            thirdScrolleable.style.opacity = '1';
+                            video.style.opacity = '1';
+                        } else {
+                            thirdScrolleable.style.opacity = '0';
+                        }
+                    });
+                });
+            }, observerOptions);
+            observer3.observe(thirdScrolleable);
+        }
+    }
+
+    // Dot navigation sync
+    const sectionMap = {
+        firstScrolleable,
+        secondScrolleable,
+        thirdScrolleable,
+    };
+
+    const setActiveDot = (id: string | null) => {
+        if (!id) return;
+        dots.forEach((dot) => {
+            const target = dot.dataset?.target;
+            dot.classList.toggle('active', target === id);
+        });
+    };
+
+    dots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+            const targetId = dot.dataset?.target;
+            const el = targetId ? sectionMap[targetId] : null;
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    });
+
+    const updateActiveDot = () => {
+        const containerRect = scrollContainer?.getBoundingClientRect() || { top: 0, height: window.innerHeight };
+        const viewportCenter = containerRect.height / 2;
+        let closestId = null;
+        let closestDist = Infinity;
+
+        Object.values(sectionMap).forEach((el) => {
+            if (!el) return;
+            const rect = el.getBoundingClientRect();
+            const center = rect.top - containerRect.top + rect.height / 2;
+            const dist = Math.abs(center - viewportCenter);
+            if (dist < closestDist) {
+                closestDist = dist;
+                closestId = el.id;
+            }
+        });
+
+        if (closestId) setActiveDot(closestId);
+    };
+
+    const handleDotScroll = () => {
+        requestAnimationFrame(updateActiveDot);
+    };
+
+    if (scrollContainer) {
+        scrollContainer.addEventListener('scroll', handleDotScroll, { passive: true });
+        updateActiveDot();
+    } else {
+        window.addEventListener('scroll', handleDotScroll, { passive: true });
+        updateActiveDot();
+    }
+
+    function isFourthScrolleableSticky() {
+        if (!fourthScrolleable || !scrollContainer) return false;
+        
+        const fourthRect = fourthScrolleable.getBoundingClientRect();
+        const containerRect = scrollContainer.getBoundingClientRect();
+        const viewportHeight = containerRect.height;
+        
+        const stickyTopPosition = containerRect.top + (viewportHeight * 0.45);
+        const distanceFromSticky = Math.abs(fourthRect.top - stickyTopPosition);
+        const tolerance = 30;
+        const isVisible = fourthRect.top >= containerRect.top && 
+                         fourthRect.bottom <= containerRect.bottom;
+        
+        return distanceFromSticky <= tolerance && isVisible;
+    }
+
+    function showContactForm() {
+        if (fifthScrolleable) {
+            requestAnimationFrame(() => {
+                fifthScrolleable.style.opacity = '1';
+            });
+        }
+    }
+
+    function hideContactForm() {
+        if (fifthScrolleable) {
+            requestAnimationFrame(() => {
+                fifthScrolleable.style.opacity = '0';
+            });
+        }
+    }
+
+    if (fourthScrolleable) {
+        const observer4 = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                requestAnimationFrame(() => {
+                    if (entry.isIntersecting) {
+                        video.style.opacity = '0';
+                        sectionTitle.style.transform = 'translateY(-100px)';
+                        sectionTitle.style.opacity = '0';
+                    } else {
+                        video.style.opacity = '1';
+                        sectionTitle.style.transform = 'translateY(0px)';
+                        sectionTitle.style.opacity = '1';
+                    }
+                });
+            });
+        }, {
+            root: scrollContainer,
+            threshold: 0.5,
+            rootMargin: '0px'
+        });
+        observer4.observe(fourthScrolleable);
+    }
+
+    let scrollTicking = false;
+    if (scrollContainer && fourthScrolleable) {
+        scrollContainer.addEventListener('scroll', function() {
+            if (!scrollTicking) {
+                requestAnimationFrame(() => {
+                    if (isFourthScrolleableSticky()) {
+                        showContactForm();
+                    } else {
+                        hideContactForm();
+                    }
+                    scrollTicking = false;
+                });
+                scrollTicking = true;
+            }
+        });
+    }
+
+}); 
+</script>
+
